@@ -40,25 +40,12 @@ sendTo("pushsafer", {
 
 ```
 
+You can find API description [here](https://www.pushsafer.com/en/pushapi)
+
+
 ## Changelog
-### 1.0.1 (2016-08-28)
-* (bluefox) filter out double messages
-
-### 1.0.0 (2016-06-01)
-* (bluefox) fix timestamp
-* (bluefox) update grunt packages
-
-### 0.1.1 (2015-05-03)
-* (bluefox) add readme link
-
-### 0.1.0 (2015-01-03)
-* (bluefox) enable npm install
-
-### 0.0.4 (2014-11-22)
-* (bluefox) support of new naming concept
-
-### 0.0.3 (2014-10-08)
-* (bluefox) add "daemon" mode to "subscribe"
+### 0.1.0 (2016-08-28)
+* filter out double messages
 
 ## License
 
