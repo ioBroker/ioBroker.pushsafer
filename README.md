@@ -12,7 +12,7 @@ Send pushsafer notifications from ioBroker.
 Pushsafer.com supports iOS, Android, Windows 10 (Phone & Desktop) devices and Webpush (Chrome & Firefox)
 
 ## Configuration
-First of all it is required an account on pushsafer with a private key
+First of all it is required an account on pushsafer with a [private key](https://www.pushsafer.com/)
 ![Pushsafer configuration](img/Screen0.png)
 
 ![Private Key](img/Screen1.png)
