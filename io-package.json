@@ -1,8 +1,13 @@
 {
     "common": {
         "name":                     "pushsafer",
-        "version":                  "0.1.0",
+        "version":                  "0.1.1",
         "news": {
+			"0.1.1": {
+                "en": "fix error with private key",
+                "de": "Fehler mit PrivateKey fixed",
+                "ru": "Исправлена ошибка с private key"
+            }
             "0.1.0": {
                 "en": "inital commit",
                 "de": "Erster Anfang",
