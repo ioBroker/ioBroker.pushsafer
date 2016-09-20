@@ -83,9 +83,9 @@ function sendNotification(message, callback) {
     if (!message) message = {};
     
     if (!pushsafer) {
-        if (adapter.config.privatekey) {
+        if (adapter.config.token) {
             pushsafer = new Pushsafer({
-                k: adapter.config.privatekey
+                k: adapter.config.token
             });
         } else {
             adapter.log.error('Cannot send notification while not configured');
