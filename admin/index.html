@@ -26,29 +26,35 @@
         "Private Key:":                    {"de": "Privater Schlüssel:",              "ru": "Закрытый ключ:"},
         "Title:":                          {"de": "Titel:",                           "ru": "Заголовок:"},
         "Sound:":                          {"de": "Klang:",                           "ru": "Звук:"},
-	"Icon:":                           {"de": "Icon:",                            "ru": "Икона:"},
-	"Icon number 1-98:":               {"de": "Icon Nummer 1-98:",                "ru": "Иконка номер 1-98"},
-	"Vibration:":                      {"de": "Vibration:",                       "ru": "Вибрация:"},
-	"Vibration number 0-3:":           {"de": "Vibration Nummer 0-3:",            "ru": "Вибрация номер 0-3"},
+        "Icon:":                           {"de": "Icon:",                            "ru": "Икона:"},
+        "Icon number 1-98:":               {"de": "Icon Nummer 1-98:",                "ru": "Иконка номер 1-98"},
+        "Vibration:":                      {"de": "Vibration:",                       "ru": "Вибрация:"},
+        "Vibration number 0-3:":           {"de": "Vibration Nummer 0-3:",            "ru": "Вибрация номер 0-3"},
         "Test":                            {"de": "Test",                             "ru": "Тест"},
         "Notification settings":           {"de": "Mitteilung Einstellungen",         "ru": "Настройки сообщения"},
-        "Device ID or Device Group ID":    {"de": "Geräte ID oder Geräte Gruppen ID", "ru": "Идентификатор устройства или Группа идентификатор устройства"},
-        "Private or Alias Key from your Pushsafer.com account": {"de": "Privater oder Alias Schlüssel von deinem Pushsafer.com Konto",   "ru": "Частный или псевдоним ключа из вашего аккаунта Pushsafer.com"}
+        "Device ID or Device Group ID":    {"de": "Geräte ID oder Geräte Gruppen ID", "ru": "ID устройства или ID группы"},
+        "Private or Alias Key from your Pushsafer.com account": {"de": "Privater oder Alias Schlüssel von deinem Pushsafer.com Konto",   "ru": "Private или Alias key из вашего аккаунта Pushsafer.com"}
     };
 
     // the function loadSettings has to exist ...
     function load(settings, onChange) {
+        if (settings.token     === undefined) settings.token     = 'xxxxx';
+        if (settings.title     === undefined) settings.title     = 'ioBroker';
+        if (settings.device    === undefined) settings.device    = '22';
+        if (settings.sound     === undefined) settings.sound     = '1';
+        if (settings.icon      === undefined) settings.icon      = '1';
+        if (settings.vibration === undefined) settings.vibration = "";
+
         for (var key in settings) {
-            if ($('#' + key + '.value').attr('type') == 'checkbox') {
+            if ($('#' + key + '.value').attr('type') === 'checkbox') {
                 $('#' + key + '.value').prop('checked', settings[key]).change(function() {
                     onChange();
                 });
             } else {
                 $('#' + key + '.value').val(settings[key]).change(function() {
-                    changed = true;
-                    $('#save').button("enable");
-                }).keyup(function() {
                     onChange();
+                }).keyup(function() {
+                    $(this).trigger('change');
                 });
             }
         }
@@ -70,35 +76,16 @@
         showMessage('Check the log or your pushsafer app!');
     }
 
-    function saveHelper(obj, id, value) {
-        var ids = id.split('_');
-        if (ids.length === 1) {
-            obj[id] = value;
-        } else if (ids.length === 2) {
-            if (!obj[ids[0]]) obj[ids[0]] = {};
-            obj[ids[0]][ids[1]] = value;
-        } else if (ids.length === 3) {
-            if (ids[2] == "pass") {
-                value = encrypt("Zgfr56gFe87jJOM", value);
-            }
-
-            if (!obj[ids[0]]) obj[ids[0]] = {};
-            if (!obj[ids[0]][ids[1]]) obj[ids[0]][ids[1]] = {};
-            obj[ids[0]][ids[1]][ids[2]] = value;
-        }
-        return obj;
-    }
-
     function getSettings() {
         var obj = {};
         $('.value').each(function () {
             var $this = $(this);
             var id = $this.attr('id');
 
-            if ($this.attr('type') == 'checkbox') {
-                obj = saveHelper(obj, id, $this.prop('checked'))
+            if ($this.attr('type') === 'checkbox') {
+                obj[id] = $this.prop('checked');
             } else {
-                obj = saveHelper(obj, id, $this.val())
+                obj[id] = $this.val();
             }
         });
         return obj;
@@ -138,12 +125,12 @@
         <tr>
             <td class="translate">Icon:</td>
             <td><input id="icon" type="text" size="50" class="value"/></td>
-            <td class="translate">Icon number 1-98</td>
+            <td class="translate">Icon number 1-98:</td>
         </tr>
         <tr>
             <td class="translate">Vibration:</td>
             <td><input id="vibration" type="text" size="50" class="value"/></td>
-            <td class="translate">Vibration number 0-3</td>
+            <td class="translate">Vibration number 0-3:</td>
         </tr>
         <tr>
             <td class="translate">Sound:</td>

@@ -42,6 +42,9 @@ You can find API description [here](https://www.pushsafer.com/en/pushapi)
 
 
 ## Changelog
+### 0.1.3 (2016-09-21)
+* (bluefox) fix config dialog
+
 ### 0.1.2 (2016-09-21)
 * fixed error with private key
 

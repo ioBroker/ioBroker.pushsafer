@@ -1,9 +1,14 @@
 {
     "common": {
         "name":                     "pushsafer",
-        "version":                  "0.1.2",
+        "version":                  "0.1.3",
         "news": {
-			"0.1.2": {
+            "0.1.3": {
+                "en": "fix config",
+                "de": "Fehler mit der Konfig-Dialog fixed",
+                "ru": "Исправлена ошибка в настройках"
+            },
+            "0.1.2": {
                 "en": "fix error with private key",
                 "de": "Fehler mit PrivateKey fixed",
                 "ru": "Исправлена ошибка с private key"
@@ -35,12 +40,12 @@
 		"type":                     "communication"
     },
     "native": {
-        "k":    "xxxxx",
-        "t":    "ioBroker",
-        "d":    "22",
-		"s":    "1",
-        "i":    "1",
-		"v":    ""
+        "token":     "xxxxx",
+        "title":     "ioBroker",
+        "device":    "22",
+		"sound":     "1",
+        "icon":      "1",
+		"vibration": ""
     },
     "objects": [
 
