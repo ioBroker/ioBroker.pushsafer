@@ -1,24 +1,15 @@
 <html>
 
-<!-- these 4 files always have to be included -->
 <link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
 <script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
 <script type="text/javascript" src="../../lib/js/jquery-ui-1.10.3.full.min.js"></script>
 
-<!-- these two file always have to be included -->
 <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
 <script type="text/javascript" src="../../js/translate.js"></script>
 <script type="text/javascript" src="../../js/adapter-settings.js"></script>
 
-<!-- you have to define 2 functions in the global scope: -->
 <script type="text/javascript">
-    var rooms =       [];
-    var roomsSelect = "";
-    var devices =     [];
-    var processed =   1000;
-    var isStarted =   null;
-
     systemDictionary = {
         "Pushsafer adapter settings":      {"de": "Pushsafer-Adapter Einstellungen",  "ru": "Настройки Pushsafer драйвера"},
         "Pushsafer settings":              {"de": "Pushsafer Einstellungen:",         "ru": "Настройки Pushsafer сервера"},
@@ -43,7 +34,7 @@
         if (settings.device    === undefined) settings.device    = '22';
         if (settings.sound     === undefined) settings.sound     = '1';
         if (settings.icon      === undefined) settings.icon      = '1';
-        if (settings.vibration === undefined) settings.vibration = "";
+        if (settings.vibration === undefined) settings.vibration = '';
 
         for (var key in settings) {
             if ($('#' + key + '.value').attr('type') === 'checkbox') {

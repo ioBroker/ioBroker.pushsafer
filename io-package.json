@@ -1,8 +1,13 @@
 {
     "common": {
         "name":                     "pushsafer",
-        "version":                  "0.1.3",
+        "version":                  "0.1.4",
         "news": {
+            "0.1.4": {
+                "en": "implement picture send\nadd blockly",
+                "de": "Implementiert Bild-Senden\nBlockly-Unterstützung",
+                "ru": "Сделана отправка изображений\nПоддержка Blockly"
+            },
             "0.1.3": {
                 "en": "fix config",
                 "de": "Fehler mit der Konfig-Dialog fixed",
@@ -37,7 +42,8 @@
         "icon":                     "pushsafer.png",
         "keywords":                 ["notification", "pushsafer", "message"],
         "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.pushsafer/master/admin/pushsafer.png",
-		"type":                     "communication"
+		"type":                     "communication",
+        "blockly":                  true
     },
     "native": {
         "token":     "xxxxx",

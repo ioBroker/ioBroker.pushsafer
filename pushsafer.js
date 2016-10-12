@@ -2,7 +2,7 @@
  *
  *      ioBroker pushsafer Adapter
  *
- *      (c) 2014-2016 bluefox
+ *      (c) 2016 bluefox
  *
  *      MIT License
  *
@@ -11,10 +11,10 @@
 /* jshint -W097 */// jshint strict:false
 /*jslint node: true */
 'use strict';
-var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
+var utils     = require(__dirname + '/lib/utils'); // Get common adapter utils
 var Pushsafer = require('pushsafer-notifications');
-
-var adapter = utils.adapter('pushsafer');
+var fs        = require('fs');
+var adapter   = utils.adapter('pushsafer');
 
 adapter.on('message', function (obj) {
     if (obj && obj.command === 'send') processMessage(obj.message);
@@ -25,8 +25,8 @@ adapter.on('ready', function () {
     main();
 });
 
-var stopTimer       = null;
 var pushsafer;
+var stopTimer       = null;
 var lastMessageTime = 0;
 var lastMessageText = '';
 
@@ -85,7 +85,8 @@ function sendNotification(message, callback) {
     if (!pushsafer) {
         if (adapter.config.token) {
             pushsafer = new Pushsafer({
-                k: adapter.config.token
+                k:     adapter.config.token,
+                debug: adapter.systemConfig.log.level === 'debug'
             });
         } else {
             adapter.log.error('Cannot send notification while not configured');
@@ -94,17 +95,84 @@ function sendNotification(message, callback) {
 
     if (!pushsafer) return;
 
-    if (typeof message !== 'object') {
-        message = {m: message};
+    if (typeof message !== 'object') message = {message: message};
+
+    message.m         = message.message   || message.m || '';
+    message.t         = message.title     || message.t || adapter.config.title;
+    message.s         = message.sound     || message.s || (adapter.config.sound ? adapter.config.sound : undefined);
+    message.i         = message.icon      || message.i || adapter.config.icon;
+    message.d         = message.device    || message.d || adapter.config.device;
+    message.v         = message.vibration || message.v || adapter.config.vibration;
+    if (message.url)      message.u  = message.url;
+    if (message.urlTitle) message.ut = message.urlTitle;
+
+    var data;
+    var parts;
+
+    if (message.picture) {
+        if (message.picture.substring(0, 5) !== 'data:') {
+            try {
+                data = new Buffer(fs.readFileSync(message.picture)).toString('base64');
+                message.picture = message.picture.replace(/\\/g, '/');
+                parts = message.picture.split('/');
+
+                message.p = 'data:image/' + parts.pop().toLowerCase() + ';base64,' + data;
+            } catch (e) {
+                adapter.log.error('Cannot read image "' + message.picture + '": '+ e);
+            }
+        } else {
+            message.p = message.picture;
+        }
+    }
+    if (message.picture2) {
+        if (message.picture2.substring(0, 5) !== 'data:') {
+            try {
+                data = new Buffer(fs.readFileSync(message.picture2)).toString('base64');
+                message.picture2 = message.picture2.replace(/\\/g, '/');
+                parts = message.picture2.split('/');
+
+                message.p2 = 'data:image/' + parts.pop().toLowerCase() + ';base64,' + data;
+            } catch (e) {
+                adapter.log.error('Cannot read image "' + message.picture2 + '": '+ e);
+            }
+        } else {
+            message.p2 = message.picture2;
+        }
+    }
+    if (message.picture3) {
+        if (message.picture3.substring(0, 5) !== 'data:') {
+            try {
+                data = new Buffer(fs.readFileSync(message.picture3)).toString('base64');
+                message.picture3 = message.picture3.replace(/\\/g, '/');
+                parts = message.picture3.split('/');
+
+                message.p3 = 'data:image/' + parts.pop().toLowerCase() + ';base64,' + data;
+            } catch (e) {
+                adapter.log.error('Cannot read image "' + message.picture3 + '": '+ e);
+            }
+        } else {
+            message.p3 = message.picture3;
+        }
     }
 
-    message.t         = message.title     || adapter.config.title;
-    message.s         = message.sound     || (adapter.config.sound ? adapter.config.sound : undefined);
-    message.i         = message.icon      || adapter.config.icon;
-    message.d         = message.device    || adapter.config.device;
-    message.v         = message.vibration || adapter.config.vibration;
+    if (message.message   !== undefined) delete message.message;
+    if (message.title     !== undefined) delete message.title;
+    if (message.sound     !== undefined) delete message.sound;
+    if (message.icon      !== undefined) delete message.icon;
+    if (message.device    !== undefined) delete message.device;
+    if (message.vibration !== undefined) delete message.vibration;
+    if (message.picture   !== undefined) delete message.picture;
+    if (message.picture2  !== undefined) delete message.picture2;
+    if (message.picture3  !== undefined) delete message.picture3;
+    if (message.url       !== undefined) delete message.url;
+    if (message.urlTitle  !== undefined) delete message.urlTitle;
 
-    adapter.log.info('Send pushsafer notification: ' + JSON.stringify(message));
+    adapter.log.debug('Send pushsafer notification: ' + message.m);
+
+    message.s = message.s.toString();
+    message.i = message.i.toString();
+    message.d = message.d.toString();
+    message.v = message.v.toString();
 
     pushsafer.send(message, function (err, result) {
         if (err) {
