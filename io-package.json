@@ -1,9 +1,9 @@
 {
     "common": {
         "name":                     "pushsafer",
-        "version":                  "0.1.4",
+        "version":                  "0.1.5",
         "news": {
-            "0.1.4": {
+            "0.1.5": {
                 "en": "implement picture send\nadd blockly",
                 "de": "Implementiert Bild-Senden\nBlockly-Unterstützung",
                 "ru": "Сделана отправка изображений\nПоддержка Blockly"

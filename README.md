@@ -46,8 +46,7 @@ sendTo("pushsafer", {
 You can find API description [here](https://www.pushsafer.com/en/pushapi)
 
 ## Changelog
-
-### 0.1.4 (2016-10-12)
+### 0.1.5 (2016-10-12)
 * (bluefox) implement picture send
 * (bluefox) add blockly
 
