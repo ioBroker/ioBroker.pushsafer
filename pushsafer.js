@@ -169,10 +169,10 @@ function sendNotification(message, callback) {
 
     adapter.log.debug('Send pushsafer notification: ' + message.m);
 
-    message.s = message.s.toString();
-    message.i = message.i.toString();
-    message.d = message.d.toString();
-    message.v = message.v.toString();
+    if (message.s !== null && message.s !== undefined) message.s = message.s.toString();
+    if (message.i !== null && message.i !== undefined) message.i = message.i.toString();
+    if (message.d !== null && message.d !== undefined) message.d = message.d.toString();
+    if (message.v !== null && message.v !== undefined) message.v = message.v.toString();
 
     pushsafer.send(message, function (err, result) {
         if (err) {
