@@ -13,18 +13,21 @@
     systemDictionary = {
         "Pushsafer adapter settings":      {"de": "Pushsafer-Adapter Einstellungen",  "ru": "Настройки Pushsafer драйвера"},
         "Pushsafer settings":              {"de": "Pushsafer Einstellungen:",         "ru": "Настройки Pushsafer сервера"},
-        "Device:":                         {"de": "Gerät:",                           "ru": "Yстройство:"},
+        "Device:":                         {"de": "Gerät:",                           "ru": "Устройство:"},
         "Private Key:":                    {"de": "Privater Schlüssel:",              "ru": "Закрытый ключ:"},
         "Title:":                          {"de": "Titel:",                           "ru": "Заголовок:"},
         "Sound:":                          {"de": "Klang:",                           "ru": "Звук:"},
         "Icon:":                           {"de": "Icon:",                            "ru": "Икона:"},
-        "Icon number 1-98:":               {"de": "Icon Nummer 1-98:",                "ru": "Иконка номер 1-98"},
+        "Icon number 1-98":                {"de": "Icon Nummer 1-98",                 "ru": "Иконка номер 1-98"},
         "Vibration:":                      {"de": "Vibration:",                       "ru": "Вибрация:"},
-        "Vibration number 0-3:":           {"de": "Vibration Nummer 0-3:",            "ru": "Вибрация номер 0-3"},
         "Test":                            {"de": "Test",                             "ru": "Тест"},
         "Notification settings":           {"de": "Mitteilung Einstellungen",         "ru": "Настройки сообщения"},
         "Device ID or Device Group ID":    {"de": "Geräte ID oder Geräte Gruppen ID", "ru": "ID устройства или ID группы"},
-        "Private or Alias Key from your Pushsafer.com account": {"de": "Privater oder Alias Schlüssel von deinem Pushsafer.com Konto",   "ru": "Private или Alias key из вашего аккаунта Pushsafer.com"}
+        "Private or Alias Key from your Pushsafer.com account": {
+            "en": "Privater oder Alias Schlüssel von deinem <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a> Konto",
+            "de": "Privater oder Alias Schlüssel von deinem <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a> Konto",
+            "ru": "Private или Alias key из вашего аккаунта <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a>"
+        }
     };
 
     // the function loadSettings has to exist ...
@@ -50,21 +53,27 @@
             }
         }
         onChange(false);
-        $('#test').button().click(test);
+
+        $('#test').button().click(test).button('disable');
+
+        getIsAdapterAlive(function (isAlive) {
+            if (isAlive || common.enabled) {
+                $('#test').button('enable');
+            }
+        });
     }
 
     function test() {
-        //var newValue = JSON.stringify(getSettings());
-        if (!common.enabled) {
-            showMessage('Enable first the adapter to test notification.');
-            return;
-        }
-        if (changed) {
-            showMessage('First save the settings');
-            return;
-        }
-        sendTo('pushsafer.' + instance, 'send', 'This is test notification!');
-        showMessage('Check the log or your pushsafer app!');
+        var settings = getSettings();
+        settings.message = 'This is test notification!';
+
+        sendTo('pushsafer.' + instance, 'send', settings, function (result) {
+            if (result.error) {
+                showMessage(_('Cannot send: ') + result.error);
+            } else {
+                showMessage(_('Check the log or your pushsafer app!'));
+            }
+        });
     }
 
     function getSettings() {
@@ -116,12 +125,20 @@
         <tr>
             <td class="translate">Icon:</td>
             <td><input id="icon" type="text" size="50" class="value"/></td>
-            <td class="translate">Icon number 1-98:</td>
+            <td class="translate">Icon number 1-98</td>
         </tr>
         <tr>
             <td class="translate">Vibration:</td>
-            <td><input id="vibration" type="text" size="50" class="value"/></td>
-            <td class="translate">Vibration number 0-3:</td>
+            <td>
+                <select id="vibration" class="value">
+                    <option value="" class="translate">default</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </td>
+            <td></td>
         </tr>
         <tr>
             <td class="translate">Sound:</td>
@@ -159,7 +176,12 @@
             </select></td>
             <td></td>
         </tr>
+        <tr>
+            <td></td>
+            <td><button id="test" class="translate">Test</button></td>
+            <td></td>
+        </tr>
     </table>
-    <button id="test" class="translate">Test</button>
+
 </div>
 </html>

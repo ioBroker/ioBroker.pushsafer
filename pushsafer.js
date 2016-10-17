@@ -17,7 +17,9 @@ var fs        = require('fs');
 var adapter   = utils.adapter('pushsafer');
 
 adapter.on('message', function (obj) {
-    if (obj && obj.command === 'send') processMessage(obj.message);
+    if (obj && obj.command === 'send') {
+        processMessage(obj.message, obj);
+    }
     processMessages();
 });
 
@@ -26,26 +28,10 @@ adapter.on('ready', function () {
 });
 
 var pushsafer;
-var stopTimer       = null;
 var lastMessageTime = 0;
 var lastMessageText = '';
 
-// Terminate adapter after 30 seconds idle
-function stop() {
-    if (stopTimer) {
-        clearTimeout(stopTimer);
-    }
-
-    // Stop only if subscribe mode
-    if (adapter.common && adapter.common.mode === 'subscribe') {
-        stopTimer = setTimeout(function () {
-            stopTimer = null;
-            adapter.stop();
-        }, 30000);
-    }
-}
-
-function processMessage(message) {
+function processMessage(message, obj) {
     if (!message) return;
 
     // filter out double messages
@@ -57,11 +43,11 @@ function processMessage(message) {
     lastMessageTime = new Date().getTime();
     lastMessageText = json;
 
-    if (stopTimer) clearTimeout(stopTimer);
-
-    sendNotification(message);
-
-    stop();
+    sendNotification(message, function (err) {
+        if (obj && obj.callback) {
+            adapter.sendTo(obj.from, obj.command, {error: err}, obj.callback);
+        }
+    });
 }
 
 function processMessages() {
@@ -76,24 +62,35 @@ function processMessages() {
 function main() {
     // Adapter is started only if some one writes into "system.adapter.pushsafer.X.messagebox" new value
     processMessages();
-    stop();
 }
 
 function sendNotification(message, callback) {
     if (!message) message = {};
-    
+    var push;
+    var isDelete = false;
+
+    if (message.token) {
+        isDelete = true;
+        push = new Pushsafer({
+            k:     message.token,
+            debug: process.argv[3] === 'debug'
+        });
+    } else
     if (!pushsafer) {
         if (adapter.config.token) {
             pushsafer = new Pushsafer({
                 k:     adapter.config.token,
                 debug: process.argv[3] === 'debug'
             });
+            push = pushsafer;
         } else {
             adapter.log.error('Cannot send notification while not configured');
+            if (callback) callback('Cannot send notification while not configured');
+            return;
         }
     }
 
-    if (!pushsafer) return;
+    if (!push) return;
 
     if (typeof message !== 'object') message = {message: message};
 
@@ -113,8 +110,7 @@ function sendNotification(message, callback) {
         if (message.picture.substring(0, 5) !== 'data:') {
             try {
                 data = new Buffer(fs.readFileSync(message.picture)).toString('base64');
-                message.picture = message.picture.replace(/\\/g, '/');
-                parts = message.picture.split('/');
+                parts = message.picture.split('.');
 
                 message.p = 'data:image/' + parts.pop().toLowerCase() + ';base64,' + data;
             } catch (e) {
@@ -128,8 +124,7 @@ function sendNotification(message, callback) {
         if (message.picture2.substring(0, 5) !== 'data:') {
             try {
                 data = new Buffer(fs.readFileSync(message.picture2)).toString('base64');
-                message.picture2 = message.picture2.replace(/\\/g, '/');
-                parts = message.picture2.split('/');
+                parts = message.picture2.split('.');
 
                 message.p2 = 'data:image/' + parts.pop().toLowerCase() + ';base64,' + data;
             } catch (e) {
@@ -143,8 +138,7 @@ function sendNotification(message, callback) {
         if (message.picture3.substring(0, 5) !== 'data:') {
             try {
                 data = new Buffer(fs.readFileSync(message.picture3)).toString('base64');
-                message.picture3 = message.picture3.replace(/\\/g, '/');
-                parts = message.picture3.split('/');
+                parts = message.picture3.split('.');
 
                 message.p3 = 'data:image/' + parts.pop().toLowerCase() + ';base64,' + data;
             } catch (e) {
@@ -166,6 +160,7 @@ function sendNotification(message, callback) {
     if (message.picture3  !== undefined) delete message.picture3;
     if (message.url       !== undefined) delete message.url;
     if (message.urlTitle  !== undefined) delete message.urlTitle;
+    if (message.token     !== undefined) delete message.token;
 
     adapter.log.debug('Send pushsafer notification: ' + message.m);
 
@@ -174,10 +169,21 @@ function sendNotification(message, callback) {
     if (message.d !== null && message.d !== undefined) message.d = message.d.toString();
     if (message.v !== null && message.v !== undefined) message.v = message.v.toString();
 
-    pushsafer.send(message, function (err, result) {
-        if (err) {
-            adapter.log.error('Cannot send notification: ' + JSON.stringify(err));
-            if (callback) callback(err);
+    push.send(message, function (err, result) {
+        if (isDelete) {
+            setTimeout(function () {
+                push = null;
+            }, 500);
+        }
+        try {
+            result = JSON.parse(result);
+        } catch (e) {
+            adapter.log.error('Cannot parse answer: ' + result);
+        }
+
+        if (err || result.error) {
+            adapter.log.error('Cannot send notification: ' + JSON.stringify(err || result.error));
+            if (callback) callback(err || result.error);
             return false;
         } else {
             if (callback) callback();

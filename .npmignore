@@ -1,0 +1,8 @@
+Gruntfile.js
+tasks
+test
+tmp
+.idea
+.travis.yml
+.git
+node_modules
