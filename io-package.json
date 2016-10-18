@@ -1,13 +1,18 @@
 {
     "common": {
         "name":                     "pushsafer",
-        "version":                  "0.1.0",
+        "version":                  "0.1.1",
         "news": {
+            "0.1.1": {
+                "en": "add new parameters",
+                "de": "neue Parameter hinzugefügt",
+                "ru": "добавлять новые параметры"
+            },
             "0.1.0": {
                 "en": "inital commit",
                 "de": "Erster Anfang",
                 "ru": "Начало"
-            }
+            }		
         },
         "title":                    "pushsafer Adapter",
         "desc":                     "This adapter allows to send pushsafer notifications from ioBroker",
@@ -25,17 +30,20 @@
         "wakeup":                   true,
         "enabled":                  true,
         "icon":                     "pushsafer.png",
-        "keywords":                 ["notification", "pushsafer", "message"],
+        "keywords":                 ["notification", "pushsafer", "message", "push", "push notification"],
         "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.pushsafer/master/admin/pushsafer.png",
-		"type":                     "communication"
+        "type":                     "communication"
     },
     "native": {
         "k":    "xxxxx",
         "t":    "ioBroker",
-        "d":    "22",
-		"s":    "1",
+        "d":    "",
+	"s":    "1",
         "i":    "1",
-		"v":    ""
+	"v":    "0",
+	"u":    "",
+	"ut":   "",
+	"l":    ""
     },
     "objects": [
 
