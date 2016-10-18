@@ -12,7 +12,7 @@ Send pushsafer notifications from ioBroker.
 Pushsafer.com supports iOS, Android, Windows 10 (Phone & Desktop) devices and Webpush (Chrome & Firefox)
 
 ## Configuration
-First of all it is required an account on pushsafer with a [private key](https://www.pushsafer.com/)
+First of all it is required an account on pushsafer with a [private key](https://www.pushsafer.com/), you also can use a alias key with predefined parameters.
 ![Pushsafer configuration](img/Screen0.png)
 
 ## Usage
@@ -28,12 +28,15 @@ sendTo("pushsafer.1", "message body");
 
 // To specify subject or other options
 sendTo("pushsafer", {
-   m:  'Test text',   // mandatory - your text message
-   t:    'SweetHome', // optional  - your message's title, otherwise your app's name is used
-   d:    '12',        // optional  - a device id or device group id (empty or a = all devices)
-   s:    '2',         // optional  - a number betwenn 0-28 (see pushsafers API description)
-   i:    '2',         // optional  - a number betwenn 1-98 (see pushsafers API description)
-   v:    '0'          // optional  - a number betwenn 0-3 (see pushsafers API description)
+   m:  'Test text',                    // mandatory - your text message
+   t:    'SweetHome',                  // optional  - your message's title, otherwise your app's name is used
+   d:    '12',                         // optional  - a device id or device group id (empty or a = all devices)
+   s:    '2',                          // optional  - a number betwenn 0-28 (see pushsafers API description)
+   i:    '2',                          // optional  - a number betwenn 1-98 (see pushsafers API description)
+   v:    '0',                          // optional  - a number betwenn 0-3 (see pushsafers API description)
+   u:    'https://www.pushsafer.com',  // optional  - a URL or URL scheme (https://www.pushsafer.com/en/url_schemes)
+   ut:   'Open Pushsafer',             // optional  - a URLs title
+   l:    '60'                          // optional  - Integer number 0-43200: Time in minutes, after which message automatically gets purged
 });
 
 ```
@@ -42,6 +45,8 @@ You can find API description [here](https://www.pushsafer.com/en/pushapi)
 
 
 ## Changelog
+### 0.1.1 (2016-10-18)
+* add parameters url, urltitle, time2live
 ### 0.1.0 (2016-08-28)
 * filter out double messages
 
