@@ -45,8 +45,10 @@ You can find API description [here](https://www.pushsafer.com/en/pushapi)
 
 
 ## Changelog
+
 ### 0.1.1 (2016-10-18)
 * add parameters url, urltitle, time2live
+
 ### 0.1.0 (2016-08-28)
 * filter out double messages
 
