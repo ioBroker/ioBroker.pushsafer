@@ -102,7 +102,10 @@ function sendNotification(message, callback) {
     message.s         = message.sound     || (adapter.config.sound ? adapter.config.sound : undefined);
     message.i         = message.icon      || adapter.config.icon;
     message.d         = message.device    || adapter.config.device;
-	message.v         = message.vibration || adapter.config.vibration;
+    message.v         = message.vibration || adapter.config.vibration;
+    message.u         = message.url       || adapter.config.url;
+    message.ut        = message.urltitle  || adapter.config.urltitle;
+    message.l         = message.time2live || adapter.config.time2live;
 
     adapter.log.info('Send pushsafer notification: ' + JSON.stringify(message));
 
