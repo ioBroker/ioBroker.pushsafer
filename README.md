@@ -12,7 +12,7 @@ Send pushsafer notifications from ioBroker.
 Pushsafer.com supports iOS, Android, Windows 10 (Phone & Desktop) devices and Webpush (Chrome & Firefox)
 
 ## Configuration
-First of all it is required an account on pushsafer with a [private key](https://www.pushsafer.com/)
+First of all it is required an account on pushsafer with a [private key](https://www.pushsafer.com/), instead of the private key, you also can use a alias key with predefined parameters.
 ![Pushsafer configuration](img/Screen0.png)
 
 ## Usage
@@ -34,17 +34,21 @@ sendTo("pushsafer", {
    sound:     '2',                     // optional  - a number betwenn 0-28 (see pushsafers API description)
    icon:      '2',                     // optional  - a number betwenn 1-98 (see pushsafers API description)
    vibration: '0',                     // optional  - a number betwenn 0-3 (see pushsafers API description)
-   picture:   'absolutePathToPicture'  // optional - absolute path to picture or base64 coded image URL
-   picture2:  'absolutePathToPicture2' // optional - absolute path to picture or base64 coded image URL
-   picture3:  'absolutePathToPicture3' // optional - absolute path to picture or base64 coded image URL
-   url:       'http://blabla',         // optional - URL in the link
-   urlTitle:  'Link to BLA'            // optional - title of URL
+   picture:   '',                      // optional - a base64 coded image URL
+   picture2:  '',                      // optional - a base64 coded image URL
+   picture3:  '',                      // optional - a base64 coded image URL
+   url:       'http://blabla',         // optional - URL or URL scheme, https://www.pushsafer.com/en/url_schemes
+   urlTitle:  'Link to BLA',           // optional - title of URL
+   time2live  '60',                    // optional - title of URL
 });
 ```
 
 You can find API description [here](https://www.pushsafer.com/en/pushapi)
 
 ## Changelog
+### 0.1.7 (2016-10-19)
+* (appzer) implement time2live parameter
+
 ### 0.1.6 (2016-10-17)
 * (bluefox) implement picture send
 * (bluefox) add blockly
