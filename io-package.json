@@ -1,8 +1,13 @@
 {
     "common": {
         "name":                     "pushsafer",
-        "version":                  "0.1.6",
+        "version":                  "0.1.7",
         "news": {
+            "0.1.7": {
+                "en": "implement time2live parameter",
+                "de": "Implementiert time2live Parameter",
+                "ru": "реализовать time2live параметры"
+            },
             "0.1.6": {
                 "en": "implement picture send\nadd blockly",
                 "de": "Implementiert Bild-Senden\nBlockly-Unterstützung",
@@ -41,16 +46,19 @@
         "icon":                     "pushsafer.png",
         "keywords":                 ["notification", "pushsafer", "message"],
         "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.pushsafer/master/admin/pushsafer.png",
-		"type":                     "communication",
+        "type":                     "communication",
         "blockly":                  true
     },
     "native": {
         "token":     "xxxxx",
         "title":     "ioBroker",
         "device":    "22",
-		"sound":     "1",
+        "sound":     "1",
         "icon":      "1",
-		"vibration": ""
+        "vibration": "",
+        "url":       "",
+        "urlTitle":  "",
+        "time2live": ""
     },
     "objects": [
 
