@@ -75,8 +75,7 @@ function sendNotification(message, callback) {
             k:     message.token,
             debug: process.argv[3] === 'debug'
         });
-    } else
-    if (!pushsafer) {
+    } else if (!pushsafer) {
         if (adapter.config.token) {
             pushsafer = new Pushsafer({
                 k:     adapter.config.token,
@@ -88,6 +87,8 @@ function sendNotification(message, callback) {
             if (callback) callback('Cannot send notification while not configured');
             return;
         }
+    } else {
+        push = pushsafer;
     }
 
     if (!push) return;
