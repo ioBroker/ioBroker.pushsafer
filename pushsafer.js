@@ -100,6 +100,7 @@ function sendNotification(message, callback) {
     message.i         = message.icon      || message.i || adapter.config.icon;
     message.d         = message.device    || message.d || adapter.config.device;
     message.v         = message.vibration || message.v || adapter.config.vibration;
+    message.l         = message.time2live || message.l || adapter.config.time2live;
     if (message.url)      message.u  = message.url;
     if (message.urlTitle) message.ut = message.urlTitle;
 
@@ -160,6 +161,7 @@ function sendNotification(message, callback) {
     if (message.picture3  !== undefined) delete message.picture3;
     if (message.url       !== undefined) delete message.url;
     if (message.urlTitle  !== undefined) delete message.urlTitle;
+    if (message.time2live !== undefined) delete message.time2live;
     if (message.token     !== undefined) delete message.token;
 
     adapter.log.debug('Send pushsafer notification: ' + message.m);
@@ -168,6 +170,7 @@ function sendNotification(message, callback) {
     if (message.i !== null && message.i !== undefined) message.i = message.i.toString();
     if (message.d !== null && message.d !== undefined) message.d = message.d.toString();
     if (message.v !== null && message.v !== undefined) message.v = message.v.toString();
+    if (message.l !== null && message.l !== undefined) message.l = message.l.toString();
 
     push.send(message, function (err, result) {
         if (isDelete) {
