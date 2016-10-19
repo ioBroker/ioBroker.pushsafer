@@ -34,12 +34,12 @@ sendTo("pushsafer", {
    sound:     '2',                     // optional  - a number betwenn 0-28 (see pushsafers API description)
    icon:      '2',                     // optional  - a number betwenn 1-98 (see pushsafers API description)
    vibration: '0',                     // optional  - a number betwenn 0-3 (see pushsafers API description)
-   picture:   '',                      // optional - a base64 coded image URL
-   picture2:  '',                      // optional - a base64 coded image URL
-   picture3:  '',                      // optional - a base64 coded image URL
-   url:       'http://blabla',         // optional - URL or URL scheme, https://www.pushsafer.com/en/url_schemes
-   urlTitle:  'Link to BLA',           // optional - title of URL
-   time2live  '60',                    // optional - title of URL
+   picture:   '',                      // optional  - a base64 coded image URL
+   picture2:  '',                      // optional  - a base64 coded image URL
+   picture3:  '',                      // optional  - a base64 coded image URL
+   url:       'http://blabla',         // optional  - URL or URL scheme, https://www.pushsafer.com/en/url_schemes
+   urlTitle:  'Link to BLA',           // optional  - title of URL
+   time2live  '60',                    // optional  - title of URL
 });
 ```
 
