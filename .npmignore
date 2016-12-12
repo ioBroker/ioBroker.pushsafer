@@ -6,3 +6,5 @@ tmp
 .travis.yml
 .git
 node_modules
+.travis.yml
+appveyor.yml
