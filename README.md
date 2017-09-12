@@ -1,4 +1,5 @@
 ![Logo](admin/pushsafer.png)
+
 ioBroker pushsafer Adapter
 ==============
 
@@ -46,6 +47,9 @@ sendTo("pushsafer", {
 You can find API description [here](https://www.pushsafer.com/en/pushapi)
 
 ## Changelog
+### 0.1.8 (2017-09-12)
+* (bluefox) use new pushsafer package
+
 ### 0.1.7 (2016-10-19)
 * (appzer) implement time2live parameter
 
