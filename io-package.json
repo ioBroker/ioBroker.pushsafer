@@ -1,7 +1,7 @@
 {
     "common": {
-        "name":                     "pushsafer",
-        "version":                  "0.1.8",
+        "name": "pushsafer",
+        "version": "0.1.8",
         "news": {
             "0.1.8": {
                 "en": "use new pushsafer package",
@@ -34,38 +34,43 @@
                 "ru": "Начало"
             }
         },
-        "title":                    "pushsafer Adapter",
-        "desc":                     "This adapter allows to send pushsafer notifications from ioBroker",
+        "title": "pushsafer Adapter",
+        "desc": "This adapter allows to send pushsafer notifications from ioBroker",
         "authors": [
             "bluefox <dogafox@gmail.com>"
         ],
-        "license":                  "MIT",
-        "platform":                 "Javascript/Node.js",
-        "mode":                     "daemon",
-        "availableModes":           ["daemon", "subscribe"],
-        "loglevel":                 "info",
-        "messagebox":               true,
-        "subscribe":                "messagebox",
-        "readme":                   "https://github.com/ioBroker/ioBroker.pushsafer/blob/master/README.md",
-        "enabled":                  true,
-        "icon":                     "pushsafer.png",
-        "keywords":                 ["notification", "pushsafer", "message"],
-        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.pushsafer/master/admin/pushsafer.png",
-        "type":                     "communication",
-        "blockly":                  true
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "availableModes": [
+            "daemon",
+            "subscribe"
+        ],
+        "loglevel": "info",
+        "messagebox": true,
+        "subscribe": "messagebox",
+        "readme": "https://github.com/ioBroker/ioBroker.pushsafer/blob/master/README.md",
+        "enabled": true,
+        "icon": "pushsafer.png",
+        "keywords": [
+            "notification",
+            "pushsafer",
+            "message"
+        ],
+        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.pushsafer/master/admin/pushsafer.png",
+        "type": "messaging",
+        "blockly": true
     },
     "native": {
-        "token":     "xxxxx",
-        "title":     "ioBroker",
-        "device":    "22",
-        "sound":     "1",
-        "icon":      "1",
+        "token": "xxxxx",
+        "title": "ioBroker",
+        "device": "22",
+        "sound": "1",
+        "icon": "1",
         "vibration": "",
-        "url":       "",
-        "urlTitle":  "",
+        "url": "",
+        "urlTitle": "",
         "time2live": ""
     },
-    "objects": [
-
-    ]
+    "objects": []
 }
