@@ -14,7 +14,7 @@
 var utils     = require(__dirname + '/lib/utils'); // Get common adapter utils
 var Pushsafer = require('pushsafer-notifications');
 var fs        = require('fs');
-var adapter   = utils.adapter('pushsafer');
+var adapter   = utils.Adapter('pushsafer');
 
 adapter.on('message', function (obj) {
     if (obj && obj.command === 'send') {
