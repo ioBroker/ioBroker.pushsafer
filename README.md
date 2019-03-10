@@ -3,7 +3,7 @@
 ioBroker pushsafer Adapter
 ==============
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.pushsafer.svg)](https://www.npmjs.com/package/iobroker.pushsafer)
+![Number of Installations](http://iobroker.live/badges/pushsafer-installed.svg) ![Number of Installations](http://iobroker.live/badges/pushsafer-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.pushsafer.svg)](https://www.npmjs.com/package/iobroker.pushsafer)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.pushsafer.svg)](https://www.npmjs.com/package/iobroker.pushsafer)
 
 [![NPM](https://nodei.co/npm/iobroker.pushsafer.png?downloads=true)](https://nodei.co/npm/iobroker.pushsafer/)
