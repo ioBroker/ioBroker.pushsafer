@@ -1,8 +1,13 @@
 {
     "common": {
         "name": "pushsafer",
-        "version": "0.1.8",
+        "version": "0.1.9",
         "news": {
+            "0.1.9": {
+                "en": "add new sounds, icons and parameter",
+                "de": "neue Sounds, Icons und Parameter eingebunden",
+                "ru": "включены новые звуки, иконки и параметры"
+            },
             "0.1.8": {
                 "en": "use new pushsafer package",
                 "de": "Benutze neues Pushsafer-Paket",
