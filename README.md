@@ -32,8 +32,8 @@ sendTo("pushsafer", {
    message:   'Test text',             // mandatory - your text message
    title:     'SweetHome',             // optional  - your message's title, otherwise your app's name is used
    device:    '12',                    // optional  - a device id or device group id (empty or a = all devices)
-   sound:     '2',                     // optional  - a number betwenn 0-28 (see pushsafers API description)
-   icon:      '2',                     // optional  - a number betwenn 1-98 (see pushsafers API description)
+   sound:     '2',                     // optional  - a number betwenn 0-50 (see pushsafers API description)
+   icon:      '2',                     // optional  - a number betwenn 1-177 (see pushsafers API description)
    vibration: '0',                     // optional  - a number betwenn 0-3 (see pushsafers API description)
    picture:   'absolutePathToPicture'  // optional  - absolute path to picture or base64 coded image URL
    picture2:  'absolutePathToPicture2' // optional  - absolute path to picture or base64 coded image URL
