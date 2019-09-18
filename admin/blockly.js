@@ -13,7 +13,7 @@ if (typeof systemLang === 'undefined') {
 Blockly.Words['pushsafer']               = {'en': 'pushsafer',                   'de': 'pushsafer',                          'ru': 'pushsafer'};
 Blockly.Words['pushsafer_message']       = {'en': 'message',                     'de': 'Meldung',                            'ru': 'сообщение'};
 Blockly.Words['pushsafer_title']         = {'en': 'title (optional)',            'de': 'Betreff (optional)',                 'ru': 'заголовок (не обяз.)'};
-Blockly.Words['pushsafer_sound']         = {'en': 'sound',                       'de': 'Klang',                              'ru': 'звук'};
+Blockly.Words['pushsafer_sound']         = {'en': 'sound',                       'de': 'Ton',                                'ru': 'звук'};
 Blockly.Words['pushsafer_vibration']     = {'en': 'vibration',                   'de': 'Vibration',                          'ru': 'виброзвонок'};
 Blockly.Words['pushsafer_url']           = {'en': 'URL (optional)',              'de': 'URL (optional)',                     'ru': 'URL (не обяз.)'};
 Blockly.Words['pushsafer_url_title']     = {'en': 'URL title (optional)',        'de': 'URL Betreff (optional)',             'ru': 'заголовок для URL (не обяз.)'};
@@ -65,6 +65,38 @@ Blockly.Words['pushsafer_sound_25']      = {'ru': 'Sirens' , 'en': 'Sirens' , 'd
 Blockly.Words['pushsafer_sound_26']      = {'ru': 'Military Trumpets' , 'en': 'Military Trumpets' , 'de': 'Militär Trompeten'};
 Blockly.Words['pushsafer_sound_27']      = {'ru': 'Ufo' , 'en': 'Ufo' , 'de': 'Ufo'};
 Blockly.Words['pushsafer_sound_28']      = {'ru': 'Whah Whah Whah' , 'en': 'Whah Whah Whah' , 'de': 'Whah Whah Whah'};
+Blockly.Words['pushsafer_sound_29']      = {'ru': 'Man Saying Goodbye' , 'en': 'Man Saying Goodbye' , 'de': 'Mann sagt Goodbye'};
+Blockly.Words['pushsafer_sound_30']      = {'ru': 'Man Saying Hello' , 'en': 'Man Saying Hello' , 'de': 'Man sagt Hello'};
+Blockly.Words['pushsafer_sound_31']      = {'ru': 'Man Saying No' , 'en': 'Man Saying No' , 'de': 'Mann sagt No'};
+Blockly.Words['pushsafer_sound_32']      = {'ru': 'Man Saying Ok' , 'en': 'Man Saying Ok' , 'de': 'Mann sagt Ok'};
+Blockly.Words['pushsafer_sound_33']      = {'ru': 'Man Saying Ooohhhweee' , 'en': 'Man Saying Ooohhhweee' , 'de': 'Mann sagt Ooohhhweee'};
+Blockly.Words['pushsafer_sound_34']      = {'ru': 'Man Saying Warning' , 'en': 'Man Saying Warning' , 'de': 'Mann sagt Warning'};
+Blockly.Words['pushsafer_sound_35']      = {'ru': 'Man Saying Welcome' , 'en': 'Man Saying Welcome' , 'de': 'Mann sagt Welcome'};
+Blockly.Words['pushsafer_sound_36']      = {'ru': 'Man Saying Yeah' , 'en': 'Man Saying Yeah' , 'de': 'Mann sagt Yeah'};
+Blockly.Words['pushsafer_sound_37']      = {'ru': 'Man Saying Yes' , 'en': 'Man Saying Yes' , 'de': 'Mann sagt Yes'};
+Blockly.Words['pushsafer_sound_38']      = {'ru': 'Beep short' , 'en': 'Beep short' , 'de': 'Beep kurz'};
+Blockly.Words['pushsafer_sound_39']      = {'ru': 'Weeeee short' , 'en': 'Weeeee short' , 'de': 'Weeeee kurz'};
+Blockly.Words['pushsafer_sound_40']      = {'ru': 'Cut in and out short' , 'en': 'Cut in and out short' , 'de': 'Cut in and out kurz'};
+Blockly.Words['pushsafer_sound_41']      = {'ru': 'Finger flicking glas short' , 'en': 'Finger flicking glas short' , 'de': 'Finger an Glas schnipsen kurz'};
+Blockly.Words['pushsafer_sound_42']      = {'ru': 'Wa Wa Waaaa short' , 'en': 'Wa Wa Waaaa short' , 'de': 'Wa Wa Waaaa kurz'};
+Blockly.Words['pushsafer_sound_43']      = {'ru': 'Laser short' , 'en': 'Laser short' , 'de': 'Laser kurz'};
+Blockly.Words['pushsafer_sound_44']      = {'ru': 'Wind Chime short' , 'en': 'Wind Chime short' , 'de': 'Windspiel kurz'};
+Blockly.Words['pushsafer_sound_45']      = {'ru': 'Echo short' , 'en': 'Echo short' , 'de': 'Echo kurz'};
+Blockly.Words['pushsafer_sound_46']      = {'ru': 'Zipper short' , 'en': 'Zipper short' , 'de': 'Zipper kurz'};
+Blockly.Words['pushsafer_sound_47']      = {'ru': 'HiHat short' , 'en': 'HiHat short' , 'de': 'HiHat kurz'};
+Blockly.Words['pushsafer_sound_48']      = {'ru': 'Beep 2 short' , 'en': 'Beep 2 short' , 'de': 'Beep 2 kurz'};
+Blockly.Words['pushsafer_sound_49']      = {'ru': 'Beep 3 short' , 'en': 'Beep 3 short' , 'de': 'Beep 3 kurz'};
+Blockly.Words['pushsafer_sound_50']      = {'ru': 'Beep 4 short' , 'en': 'Beep 4 short' , 'de': 'Beep 4 kurz'};
+Blockly.Words['pushsafer_sound_51']      = {'ru': 'The Alarm is armed' , 'en': 'The Alarm is armed' , 'de': 'The Alarm is armed'};
+Blockly.Words['pushsafer_sound_52']      = {'ru': 'The Alarm is disarmed' , 'en': 'The Alarm is disarmed' , 'de': 'The Alarm is disarmed'};
+Blockly.Words['pushsafer_sound_53']      = {'ru': 'The Backup is ready' , 'en': 'The Backup is ready' , 'de': 'The Backup is ready'};
+Blockly.Words['pushsafer_sound_54']      = {'ru': 'The Door is closed' , 'en': 'The Door is closed' , 'de': 'The Door is closed'};
+Blockly.Words['pushsafer_sound_55']      = {'ru': 'The Door is opend' , 'en': 'The Door is opend' , 'de': 'The Door is opend'};
+Blockly.Words['pushsafer_sound_56']      = {'ru': 'The Window is closed' , 'en': 'The Window is closed' , 'de': 'The Window is closed'};
+Blockly.Words['pushsafer_sound_57']      = {'ru': 'The Window is open' , 'en': 'The Window is open' , 'de': 'The Window is open'};
+Blockly.Words['pushsafer_sound_58']      = {'ru': 'The Light is off' , 'en': 'The Light is off' , 'de': 'The Light is off'};
+Blockly.Words['pushsafer_sound_59']      = {'ru': 'The Light is on' , 'en': 'The Light is on' , 'de': 'The Light is on'};
+Blockly.Words['pushsafer_sound_60']      = {'ru': 'The Doorbell rings' , 'en': 'The Doorbell rings' , 'de': 'The Doorbell rings'};
 
 Blockly.Words['pushsafer_anyInstance']   = {'en': 'all instances',               'de': 'Alle Instanzen',                     'ru': 'На все драйвера'};
 Blockly.Words['pushsafer_tooltip']       = {'en': 'Send message to telegram',    'de': 'Sende eine Meldung über Telegram',   'ru': 'Послать сообщение через Pushover'};
@@ -140,7 +172,39 @@ Blockly.Blocks['pushsafer'] = {
                 [Blockly.Words['pushsafer_sound_25'][systemLang], '25'],
                 [Blockly.Words['pushsafer_sound_26'][systemLang], '26'],
                 [Blockly.Words['pushsafer_sound_27'][systemLang], '27'],
-                [Blockly.Words['pushsafer_sound_28'][systemLang], '28']
+                [Blockly.Words['pushsafer_sound_28'][systemLang], '28'],
+                [Blockly.Words['pushsafer_sound_29'][systemLang], '29'],
+                [Blockly.Words['pushsafer_sound_30'][systemLang], '30'],
+                [Blockly.Words['pushsafer_sound_31'][systemLang], '31'],
+                [Blockly.Words['pushsafer_sound_32'][systemLang], '32'],
+                [Blockly.Words['pushsafer_sound_33'][systemLang], '33'],
+                [Blockly.Words['pushsafer_sound_34'][systemLang], '34'],
+                [Blockly.Words['pushsafer_sound_35'][systemLang], '35'],
+                [Blockly.Words['pushsafer_sound_36'][systemLang], '36'],
+                [Blockly.Words['pushsafer_sound_37'][systemLang], '37'],
+                [Blockly.Words['pushsafer_sound_38'][systemLang], '38'],
+                [Blockly.Words['pushsafer_sound_39'][systemLang], '39'],
+                [Blockly.Words['pushsafer_sound_40'][systemLang], '40'],
+                [Blockly.Words['pushsafer_sound_41'][systemLang], '41'],
+                [Blockly.Words['pushsafer_sound_42'][systemLang], '42'],
+                [Blockly.Words['pushsafer_sound_43'][systemLang], '43'],
+                [Blockly.Words['pushsafer_sound_44'][systemLang], '44'],
+                [Blockly.Words['pushsafer_sound_45'][systemLang], '45'],
+                [Blockly.Words['pushsafer_sound_46'][systemLang], '46'],
+                [Blockly.Words['pushsafer_sound_47'][systemLang], '47'],
+                [Blockly.Words['pushsafer_sound_48'][systemLang], '48'],
+                [Blockly.Words['pushsafer_sound_49'][systemLang], '49'],
+                [Blockly.Words['pushsafer_sound_50'][systemLang], '50'],
+                [Blockly.Words['pushsafer_sound_51'][systemLang], '51'],
+                [Blockly.Words['pushsafer_sound_52'][systemLang], '52'],
+                [Blockly.Words['pushsafer_sound_53'][systemLang], '53'],
+                [Blockly.Words['pushsafer_sound_54'][systemLang], '54'],
+                [Blockly.Words['pushsafer_sound_55'][systemLang], '55'],
+                [Blockly.Words['pushsafer_sound_56'][systemLang], '56'],
+                [Blockly.Words['pushsafer_sound_57'][systemLang], '57'],
+                [Blockly.Words['pushsafer_sound_58'][systemLang], '58'],
+                [Blockly.Words['pushsafer_sound_59'][systemLang], '59'],
+                [Blockly.Words['pushsafer_sound_60'][systemLang], '60']
             ]), 'SOUND');
 
         this.appendDummyInput('VIBRATION')
