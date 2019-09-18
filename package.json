@@ -1,7 +1,7 @@
 {
   "name": "iobroker.pushsafer",
   "description": "This adapter allows to send pushsafer notifications from ioBroker",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": {
     "name": "bluefox",
     "email": "dogafox@gmail.com"
@@ -17,6 +17,7 @@
   "keywords": [
     "ioBroker",
     "pushsafer",
+    "notificaton",
     "home automation"
   ],
   "repository": {
@@ -24,7 +25,7 @@
     "url": "git+https://github.com/ioBroker/ioBroker.pushsafer.git"
   },
   "dependencies": {
-    "pushsafer-notifications": "^0.1.6",
+    "pushsafer-notifications": "^0.1.8",
     "@iobroker/adapter-core": "^1.0.3"
   },
   "devDependencies": {
