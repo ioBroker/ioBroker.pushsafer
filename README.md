@@ -47,6 +47,9 @@ sendTo("pushsafer", {
 You can find API description [here](https://www.pushsafer.com/en/pushapi)
 
 ## Changelog
+### 0.1.9 (2019-09-19)
+* (bluefox,appzer) add new sounds
+
 ### 0.1.8 (2017-09-12)
 * (bluefox) use new pushsafer package
 
