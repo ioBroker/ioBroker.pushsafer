@@ -28,6 +28,20 @@ Blockly.Words['pushsafer_vibration_1']   = {'en': '1',                          
 Blockly.Words['pushsafer_vibration_2']   = {'en': '2',                           'de': '2',                                  'ru': '2'};
 Blockly.Words['pushsafer_vibration_3']   = {'en': '3',                           'de': '3',                                  'ru': '3'};
 
+Blockly.Words['pushsafer_priority_']    = {'en': 'default',                      'de': 'normal',                             'ru': 'по умолчанию'};
+Blockly.Words['pushsafer_priority_1']   = {'en': '1',                            'de': '1',                                  'ru': '1'};
+Blockly.Words['pushsafer_priority_2']   = {'en': '2',                            'de': '2',                                  'ru': '2'};
+Blockly.Words['pushsafer_priority_0']   = {'en': '0',                            'de': '0',                                  'ru': '0'};
+Blockly.Words['pushsafer_priority_-1']  = {'en': '-1',                           'de': '-1',                                 'ru': '-1'};
+Blockly.Words['pushsafer_priority_-2']  = {'en': '-2',                           'de': '-2',                                 'ru': '-2'};
+
+Blockly.Words['pushsafer_answer_']      = {'en': 'default',                      'de': 'normal',                             'ru': 'по умолчанию'};
+Blockly.Words['pushsafer_answer_0']     = {'en': '0',                            'de': '0',                                  'ru': '0'};
+Blockly.Words['pushsafer_answer_1']     = {'en': '1',                            'de': '1',                                  'ru': '1'};
+
+Blockly.Words['pushsafer_retry']        = {'en': 'Retry (optional)',             'de': 'Retry, Erneut senden (optional)',    'ru': 'повторно отправить (не обяз.)'};
+Blockly.Words['pushsafer_expire']       = {'en': 'Expire (optional)',            'de': 'Verfallen (optional)',      'ru': 'истекать (не обяз.)'};
+
 Blockly.Words['pushsafer_log']           = {'en': 'log level',                   'de': 'Loglevel',                           'ru': 'Протокол'};
 Blockly.Words['pushsafer_log_none']      = {'en': 'none',                        'de': 'keins',                              'ru': 'нет'};
 Blockly.Words['pushsafer_log_info']      = {'en': 'info',                        'de': 'info',                               'ru': 'инфо'};
@@ -125,6 +139,14 @@ Blockly.Sendto.blocks['pushsafer'] =
     + '     </value>'
     + '     <value name="VIBRATION">'
     + '     </value>'
+    + '     <value name="PRIORITY">'
+    + '     </value>'
+    + '     <value name="RETRY">'
+    + '     </value>'
+    + '     <value name="EXPIRE">'
+    + '     </value>'
+    + '     <value name="ANSWER">'
+    + '     </value>'
     + '     <value name="PICTURE">'
     + '     </value>'
     + '     <value name="LOG">'
@@ -215,7 +237,36 @@ Blockly.Blocks['pushsafer'] = {
                 [Blockly.Words['pushsafer_vibration_2'][systemLang], '2'],
                 [Blockly.Words['pushsafer_vibration_3'][systemLang], '3']
             ]), 'VIBRATION');
+        
+        this.appendDummyInput('PRIORITY')
+            .appendField(Blockly.Words['pushsafer_priority'][systemLang])
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Words['pushsafer_priority_'][systemLang],   ''],
+                [Blockly.Words['pushsafer_priority_0'][systemLang], '0'],
+                [Blockly.Words['pushsafer_priority_1'][systemLang], '1'],
+                [Blockly.Words['pushsafer_priority_2'][systemLang], '2'],
+                [Blockly.Words['pushsafer_priority_-1'][systemLang], '-1'],
+                [Blockly.Words['pushsafer_priority_-2'][systemLang], '-2']
+            ]), 'PRIORITY');
+        
+        this.appendDummyInput('ANSWER')
+            .appendField(Blockly.Words['pushsafer_answer'][systemLang])
+            .appendField(new Blockly.FieldDropdown([
+                [Blockly.Words['pushsafer_answer_'][systemLang],   ''],
+                [Blockly.Words['pushsafer_answer_0'][systemLang], '0'],
+                [Blockly.Words['pushsafer_answer_1'][systemLang], '1']
+            ]), 'ANSWER');
 
+        var input = this.appendValueInput('RETRY')
+            .setCheck('Number')
+            .appendField(Blockly.Words['pushsafer_retry'][systemLang]);
+        if (input.connection) input.connection._optional = true;
+        
+        var input = this.appendValueInput('EXPIRE')
+            .setCheck('Number')
+            .appendField(Blockly.Words['pushsafer_expire'][systemLang]);
+        if (input.connection) input.connection._optional = true;
+        
         var input = this.appendValueInput('ICON')
             .setCheck('Number')
             .appendField(Blockly.Words['pushsafer_icon'][systemLang]);
@@ -289,6 +340,18 @@ Blockly.JavaScript['pushsafer'] = function(block) {
 
     value = Blockly.JavaScript.valueToCode(block, 'DEVICE', Blockly.JavaScript.ORDER_ATOMIC);
     if (value)     text += '   device: ' + value + ',\n';
+    
+    value = Blockly.JavaScript.valueToCode(block, 'PRIORITY', Blockly.JavaScript.ORDER_ATOMIC);
+    if (value)     text += '   priority: ' + value + ',\n';
+    
+    value = Blockly.JavaScript.valueToCode(block, 'RETRY', Blockly.JavaScript.ORDER_ATOMIC);
+    if (value)     text += '   retry: ' + value + ',\n';
+    
+    value = Blockly.JavaScript.valueToCode(block, 'EXPIRE', Blockly.JavaScript.ORDER_ATOMIC);
+    if (value)     text += '   expire: ' + value + ',\n';
+    
+    value = Blockly.JavaScript.valueToCode(block, 'ANSWER', Blockly.JavaScript.ORDER_ATOMIC);
+    if (value)     text += '   answer: ' + value + ',\n';
 
     value = Blockly.JavaScript.valueToCode(block, 'PICTURE', Blockly.JavaScript.ORDER_ATOMIC);
     if (value)     text += '   picture: ' + value + ',\n';
