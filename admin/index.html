@@ -22,6 +22,12 @@
         "Time to Live:":                   {"de": "Time to Live:",                    "ru": "Time to Live:"},
         "Integer number 0-43200: Time in minutes, after which message automatically gets purged.": {"de": "Ganzzahl 0-43200: Zeit in Minuten, nach der die Nachricht automatisch gelöscht wird.", "ru": "Целое число 0-43200: Время в течение нескольких минут, после чего сообщение автоматически становится очищенным."},
         "Vibration:":                      {"de": "Vibration:",                       "ru": "Вибрация:"},
+	"Priority:":                       {"de": "Priorität:",                       "ru": "приоритет:"},
+	"Retry:":                          {"de": "Erneut senden:",                   "ru": "повторно отправить:"},
+	"Integer 60-10800 (60s steps): Time in seconds, after a message should resend.": {"de": "Ganzzahl 60-10800 (60er Schritte): Zeit in Sekunden, nach der die Nachricht erneut versendet werden soll.", "ru": "Целое число 60-10800 (с шагом 60 с): время в секундах после повторной отправки сообщения."},
+	"Expire:":                         {"de": "Verfallen:",           	      "ru": "истекать:"},
+	"Integer 60-10800: Time in seconds, after the retry/resend should stop.": {"de": "Ganzzahl 60-10800: Zeit in Sekunden, nach der das erneute Versenden der Nachrichten gestoppt werden soll.", "ru": "Целое число 60-10800: время в секундах после остановки / повторной отправки должно быть остановлено."},
+	"Answer:":                         {"de": "Antwort:",           	      "ru": "Ответ:"},
         "Test":                            {"de": "Test",                             "ru": "Тест"},
         "Notification settings":           {"de": "Mitteilung Einstellungen",         "ru": "Настройки сообщения"},
         "Device ID or Device Group ID":    {"de": "Geräte ID oder Geräte Gruppen ID", "ru": "ID устройства или ID группы"},
@@ -133,7 +139,7 @@
             <td class="translate">Time to Live:</td>
             <td><input id="time2live" type="text" size="50" class="value"/></td>
             <td class="translate">Integer number 0-43200: Time in minutes, after which message automatically gets purged.</td>
-        </tr>	    
+        </tr>    
         <tr>
             <td class="translate">Vibration:</td>
             <td>
@@ -215,12 +221,40 @@
             </select></td>
             <td></td>
         </tr>
+	<tr>
+            <td class="translate">Priority:</td>
+            <td><select id="vibration" class="value">
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+		    <option value="-1">-1</option>
+                    <option value="-2">-2</option>
+                </select></td>
+            <td></td>
+        </tr>
+	<tr>
+            <td class="translate">Retry:</td>
+            <td><input id="retry" type="text" size="50" class="value"/></td>
+            <td class="translate">Integer 60-10800 (60s steps): Time in seconds, after a message should resend.</td>
+        </tr>
+	<tr>
+            <td class="translate">Expire:</td>
+            <td><input id="expire" type="text" size="50" class="value"/></td>
+            <td class="translate">Integer 60-10800: Time in seconds, after the retry/resend should stop.</td>
+        </tr>
+	<tr>
+            <td class="translate">Answer:</td>
+            <td><select id="answer" class="value">
+		    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select></td>
+            <td></td>
+        </tr>
         <tr>
             <td></td>
             <td><button id="test" class="translate">Test</button></td>
             <td></td>
         </tr>
     </table>
-
 </div>
 </html>
