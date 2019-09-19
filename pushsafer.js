@@ -3,6 +3,7 @@
  *      ioBroker pushsafer Adapter
  *
  *      (c) 2016 bluefox
+ *      (c) 2019 appzer (pushsafer.com) 
  *
  *      MIT License
  *
@@ -100,6 +101,10 @@ function sendNotification(message, callback) {
     message.s         = message.sound     || message.s || (adapter.config.sound ? adapter.config.sound : undefined);
     message.i         = message.icon      || message.i || adapter.config.icon;
     message.d         = message.device    || message.d || adapter.config.device;
+    message.pr        = message.priority  || message.pr || adapter.config.priority;
+    message.re        = message.retry     || message.re || adapter.config.retry;
+    message.ex        = message.expire    || message.ex || adapter.config.expire;
+    message.a         = message.answer    || message.a || adapter.config.answer;
     message.v         = message.vibration || message.v || adapter.config.vibration;
     message.l         = message.time2live || message.l || adapter.config.time2live;
     if (message.url)      message.u  = message.url;
@@ -157,6 +162,10 @@ function sendNotification(message, callback) {
     if (message.icon      !== undefined) delete message.icon;
     if (message.device    !== undefined) delete message.device;
     if (message.vibration !== undefined) delete message.vibration;
+    if (message.priorty   !== undefined) delete message.priorty;
+    if (message.retry     !== undefined) delete message.retry;
+    if (message.expire    !== undefined) delete message.expire;
+    if (message.answer    !== undefined) delete message.answer;
     if (message.picture   !== undefined) delete message.picture;
     if (message.picture2  !== undefined) delete message.picture2;
     if (message.picture3  !== undefined) delete message.picture3;
@@ -171,6 +180,10 @@ function sendNotification(message, callback) {
     if (message.i !== null && message.i !== undefined) message.i = message.i.toString();
     if (message.d !== null && message.d !== undefined) message.d = message.d.toString();
     if (message.v !== null && message.v !== undefined) message.v = message.v.toString();
+    if (message.re !== null && message.re !== undefined) message.re = message.re.toString();
+    if (message.ex !== null && message.ex !== undefined) message.ex = message.ex.toString();
+    if (message.pr !== null && message.pr !== undefined) message.pr = message.pr.toString();
+    if (message.a !== null && message.a !== undefined) message.a = message.a.toString();
     if (message.l !== null && message.l !== undefined) message.l = message.l.toString();
 
     push.send(message, function (err, result) {

@@ -1,8 +1,13 @@
 {
     "common": {
         "name": "pushsafer",
-        "version": "0.1.8",
+        "version": "0.1.9",
         "news": {
+            "0.1.9": {
+                "en": "add new sounds, icons and parameter (priority, retry, expire, answer)",
+                "de": "neue Sounds, Icons und Parameter eingebunden (Priorität, Erneut senden, Verfallen, Antwort)",
+                "ru": "добавить новые звуки, значки и параметры (приоритет, повтор, истечение, ответ)"
+            },
             "0.1.8": {
                 "en": "use new pushsafer package",
                 "de": "Benutze neues Pushsafer-Paket",
