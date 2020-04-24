@@ -33,6 +33,8 @@ function startAdapter(options) {
     adapter.on('message', obj => obj && obj.command === 'send' && obj.message && processMessage(obj.message, obj));
 
     adapter.on('ready', () => main());
+
+    return adapter;
 }
 
 function processMessage(message, obj) {
