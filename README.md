@@ -50,7 +50,7 @@ You can find API description [here](https://www.pushsafer.com/en/pushapi)
 You can use blockly too.
 
 ## Changelog
-### 1.0.1 (2020-04-24)
+### 1.0.2 (2020-04-24)
 * (bluefox) Added color icon option
 * (bluefox) Refactoring
 

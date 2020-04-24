@@ -46,8 +46,8 @@ function processMessage(message, obj) {
     lastMessageTime = new Date().getTime();
     lastMessageText = json;
 
-    sendNotification(message, err =>
-        obj && obj.callback && adapter.sendTo(obj.from, obj.command, {error: err}, obj.callback));
+    sendNotification(message, error =>
+        obj && obj.callback && adapter.sendTo(obj.from, obj.command, {error}, obj.callback));
 }
 
 function main() {

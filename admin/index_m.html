@@ -17,8 +17,10 @@
     function test() {
         var settings = getSettings();
         settings.message = _('This is test notification!');
+        $('#test').addClass('disabled');
 
         sendTo('pushsafer.' + instance, 'send', settings, function (result) {
+            $('#test').removeClass('disabled');
             if (result.error) {
                 showMessage(_('Cannot send: ') + result.error);
             } else {

@@ -1,9 +1,9 @@
 {
     "common": {
         "name": "pushsafer",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "news": {
-            "1.0.1": {
+            "1.0.2": {
                 "en": "Added color icon option\nRefactoring",
                 "de": "Farbsymboloption hinzugefügt\nRefactoring",
                 "ru": "Добавлена опция цветного значка\nРефакторинг",
@@ -81,7 +81,7 @@
         "blockly": true
     },
     "native": {
-        "token": "xxxxx",
+        "token": "",
         "title": "ioBroker",
         "device": "22",
         "sound": "1",
