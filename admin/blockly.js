@@ -1,8 +1,19 @@
 'use strict';
 
-goog.provide('Blockly.JavaScript.Sendto');
+if (typeof goog !== 'undefined') {
+    goog.provide('Blockly.JavaScript.Sendto');
 
-goog.require('Blockly.JavaScript');
+    goog.require('Blockly.JavaScript');
+}
+
+Blockly.Translate = Blockly.Translate || function (word, lang) {
+    lang = lang || systemLang;
+    if (Blockly.Words && Blockly.Words[word]) {
+        return Blockly.Words[word][lang] || Blockly.Words[word].en;
+    } else {
+        return word;
+    }
+};
 
 // just to remove warning in webstorm
 if (typeof systemLang === 'undefined') {
@@ -156,155 +167,155 @@ Blockly.Sendto.blocks['pushsafer'] =
 Blockly.Blocks['pushsafer'] = {
     init: function() {
         this.appendDummyInput('INSTANCE')
-            .appendField(Blockly.Words['pushsafer'][systemLang])
-            .appendField(new Blockly.FieldDropdown([[Blockly.Words['pushsafer_anyInstance'][systemLang], ''], ['pushsafer.0', '.0'], ["pushsafer.1", ".1"], ["pushsafer.2", ".2"], ["pushsafer.3", ".3"], ["pushsafer.4", ".4"]]), "INSTANCE");
+            .appendField(Blockly.Translate('pushsafer'))
+            .appendField(new Blockly.FieldDropdown([[Blockly.Translate('pushsafer_anyInstance'), ''], ['pushsafer.0', '.0'], ["pushsafer.1", ".1"], ["pushsafer.2", ".2"], ["pushsafer.3", ".3"], ["pushsafer.4", ".4"]]), "INSTANCE");
 
         this.appendValueInput('MESSAGE')
-            .appendField(Blockly.Words['pushsafer_message'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_message'));
 
         this.appendDummyInput('SOUND')
-            .appendField(Blockly.Words['pushsafer_sound'][systemLang])
+            .appendField(Blockly.Translate('pushsafer_sound'))
             .appendField(new Blockly.FieldDropdown([
-                [Blockly.Words['pushsafer_sound_'][systemLang],    ''],
-                [Blockly.Words['pushsafer_sound_0'][systemLang] , '0'],
-                [Blockly.Words['pushsafer_sound_1'][systemLang] , '1'],
-                [Blockly.Words['pushsafer_sound_2'][systemLang] , '2'],
-                [Blockly.Words['pushsafer_sound_3'][systemLang] , '3'],
-                [Blockly.Words['pushsafer_sound_4'][systemLang] , '4'],
-                [Blockly.Words['pushsafer_sound_5'][systemLang] , '5'],
-                [Blockly.Words['pushsafer_sound_6'][systemLang] , '6'],
-                [Blockly.Words['pushsafer_sound_7'][systemLang] , '7'],
-                [Blockly.Words['pushsafer_sound_8'][systemLang] , '8'],
-                [Blockly.Words['pushsafer_sound_9'][systemLang] , '9'],
-                [Blockly.Words['pushsafer_sound_10'][systemLang], '10'],
-                [Blockly.Words['pushsafer_sound_11'][systemLang], '11'],
-                [Blockly.Words['pushsafer_sound_12'][systemLang], '12'],
-                [Blockly.Words['pushsafer_sound_13'][systemLang], '13'],
-                [Blockly.Words['pushsafer_sound_14'][systemLang], '14'],
-                [Blockly.Words['pushsafer_sound_15'][systemLang], '15'],
-                [Blockly.Words['pushsafer_sound_16'][systemLang], '16'],
-                [Blockly.Words['pushsafer_sound_17'][systemLang], '17'],
-                [Blockly.Words['pushsafer_sound_18'][systemLang], '18'],
-                [Blockly.Words['pushsafer_sound_19'][systemLang], '19'],
-                [Blockly.Words['pushsafer_sound_20'][systemLang], '20'],
-                [Blockly.Words['pushsafer_sound_21'][systemLang], '21'],
-                [Blockly.Words['pushsafer_sound_22'][systemLang], '22'],
-                [Blockly.Words['pushsafer_sound_23'][systemLang], '23'],
-                [Blockly.Words['pushsafer_sound_24'][systemLang], '24'],
-                [Blockly.Words['pushsafer_sound_25'][systemLang], '25'],
-                [Blockly.Words['pushsafer_sound_26'][systemLang], '26'],
-                [Blockly.Words['pushsafer_sound_27'][systemLang], '27'],
-                [Blockly.Words['pushsafer_sound_28'][systemLang], '28'],
-                [Blockly.Words['pushsafer_sound_29'][systemLang], '29'],
-                [Blockly.Words['pushsafer_sound_30'][systemLang], '30'],
-                [Blockly.Words['pushsafer_sound_31'][systemLang], '31'],
-                [Blockly.Words['pushsafer_sound_32'][systemLang], '32'],
-                [Blockly.Words['pushsafer_sound_33'][systemLang], '33'],
-                [Blockly.Words['pushsafer_sound_34'][systemLang], '34'],
-                [Blockly.Words['pushsafer_sound_35'][systemLang], '35'],
-                [Blockly.Words['pushsafer_sound_36'][systemLang], '36'],
-                [Blockly.Words['pushsafer_sound_37'][systemLang], '37'],
-                [Blockly.Words['pushsafer_sound_38'][systemLang], '38'],
-                [Blockly.Words['pushsafer_sound_39'][systemLang], '39'],
-                [Blockly.Words['pushsafer_sound_40'][systemLang], '40'],
-                [Blockly.Words['pushsafer_sound_41'][systemLang], '41'],
-                [Blockly.Words['pushsafer_sound_42'][systemLang], '42'],
-                [Blockly.Words['pushsafer_sound_43'][systemLang], '43'],
-                [Blockly.Words['pushsafer_sound_44'][systemLang], '44'],
-                [Blockly.Words['pushsafer_sound_45'][systemLang], '45'],
-                [Blockly.Words['pushsafer_sound_46'][systemLang], '46'],
-                [Blockly.Words['pushsafer_sound_47'][systemLang], '47'],
-                [Blockly.Words['pushsafer_sound_48'][systemLang], '48'],
-                [Blockly.Words['pushsafer_sound_49'][systemLang], '49'],
-                [Blockly.Words['pushsafer_sound_50'][systemLang], '50'],
-                [Blockly.Words['pushsafer_sound_51'][systemLang], '51'],
-                [Blockly.Words['pushsafer_sound_52'][systemLang], '52'],
-                [Blockly.Words['pushsafer_sound_53'][systemLang], '53'],
-                [Blockly.Words['pushsafer_sound_54'][systemLang], '54'],
-                [Blockly.Words['pushsafer_sound_55'][systemLang], '55'],
-                [Blockly.Words['pushsafer_sound_56'][systemLang], '56'],
-                [Blockly.Words['pushsafer_sound_57'][systemLang], '57'],
-                [Blockly.Words['pushsafer_sound_58'][systemLang], '58'],
-                [Blockly.Words['pushsafer_sound_59'][systemLang], '59'],
-                [Blockly.Words['pushsafer_sound_60'][systemLang], '60']
+                [Blockly.Translate('pushsafer_sound_'),    ''],
+                [Blockly.Translate('pushsafer_sound_0') , '0'],
+                [Blockly.Translate('pushsafer_sound_1') , '1'],
+                [Blockly.Translate('pushsafer_sound_2') , '2'],
+                [Blockly.Translate('pushsafer_sound_3') , '3'],
+                [Blockly.Translate('pushsafer_sound_4') , '4'],
+                [Blockly.Translate('pushsafer_sound_5') , '5'],
+                [Blockly.Translate('pushsafer_sound_6') , '6'],
+                [Blockly.Translate('pushsafer_sound_7') , '7'],
+                [Blockly.Translate('pushsafer_sound_8') , '8'],
+                [Blockly.Translate('pushsafer_sound_9') , '9'],
+                [Blockly.Translate('pushsafer_sound_10'), '10'],
+                [Blockly.Translate('pushsafer_sound_11'), '11'],
+                [Blockly.Translate('pushsafer_sound_12'), '12'],
+                [Blockly.Translate('pushsafer_sound_13'), '13'],
+                [Blockly.Translate('pushsafer_sound_14'), '14'],
+                [Blockly.Translate('pushsafer_sound_15'), '15'],
+                [Blockly.Translate('pushsafer_sound_16'), '16'],
+                [Blockly.Translate('pushsafer_sound_17'), '17'],
+                [Blockly.Translate('pushsafer_sound_18'), '18'],
+                [Blockly.Translate('pushsafer_sound_19'), '19'],
+                [Blockly.Translate('pushsafer_sound_20'), '20'],
+                [Blockly.Translate('pushsafer_sound_21'), '21'],
+                [Blockly.Translate('pushsafer_sound_22'), '22'],
+                [Blockly.Translate('pushsafer_sound_23'), '23'],
+                [Blockly.Translate('pushsafer_sound_24'), '24'],
+                [Blockly.Translate('pushsafer_sound_25'), '25'],
+                [Blockly.Translate('pushsafer_sound_26'), '26'],
+                [Blockly.Translate('pushsafer_sound_27'), '27'],
+                [Blockly.Translate('pushsafer_sound_28'), '28'],
+                [Blockly.Translate('pushsafer_sound_29'), '29'],
+                [Blockly.Translate('pushsafer_sound_30'), '30'],
+                [Blockly.Translate('pushsafer_sound_31'), '31'],
+                [Blockly.Translate('pushsafer_sound_32'), '32'],
+                [Blockly.Translate('pushsafer_sound_33'), '33'],
+                [Blockly.Translate('pushsafer_sound_34'), '34'],
+                [Blockly.Translate('pushsafer_sound_35'), '35'],
+                [Blockly.Translate('pushsafer_sound_36'), '36'],
+                [Blockly.Translate('pushsafer_sound_37'), '37'],
+                [Blockly.Translate('pushsafer_sound_38'), '38'],
+                [Blockly.Translate('pushsafer_sound_39'), '39'],
+                [Blockly.Translate('pushsafer_sound_40'), '40'],
+                [Blockly.Translate('pushsafer_sound_41'), '41'],
+                [Blockly.Translate('pushsafer_sound_42'), '42'],
+                [Blockly.Translate('pushsafer_sound_43'), '43'],
+                [Blockly.Translate('pushsafer_sound_44'), '44'],
+                [Blockly.Translate('pushsafer_sound_45'), '45'],
+                [Blockly.Translate('pushsafer_sound_46'), '46'],
+                [Blockly.Translate('pushsafer_sound_47'), '47'],
+                [Blockly.Translate('pushsafer_sound_48'), '48'],
+                [Blockly.Translate('pushsafer_sound_49'), '49'],
+                [Blockly.Translate('pushsafer_sound_50'), '50'],
+                [Blockly.Translate('pushsafer_sound_51'), '51'],
+                [Blockly.Translate('pushsafer_sound_52'), '52'],
+                [Blockly.Translate('pushsafer_sound_53'), '53'],
+                [Blockly.Translate('pushsafer_sound_54'), '54'],
+                [Blockly.Translate('pushsafer_sound_55'), '55'],
+                [Blockly.Translate('pushsafer_sound_56'), '56'],
+                [Blockly.Translate('pushsafer_sound_57'), '57'],
+                [Blockly.Translate('pushsafer_sound_58'), '58'],
+                [Blockly.Translate('pushsafer_sound_59'), '59'],
+                [Blockly.Translate('pushsafer_sound_60'), '60']
             ]), 'SOUND');
 
         this.appendDummyInput('VIBRATION')
-            .appendField(Blockly.Words['pushsafer_vibration'][systemLang])
+            .appendField(Blockly.Translate('pushsafer_vibration'))
             .appendField(new Blockly.FieldDropdown([
-                [Blockly.Words['pushsafer_vibration_'][systemLang],   ''],
-                [Blockly.Words['pushsafer_vibration_1'][systemLang], '1'],
-                [Blockly.Words['pushsafer_vibration_2'][systemLang], '2'],
-                [Blockly.Words['pushsafer_vibration_3'][systemLang], '3']
+                [Blockly.Translate('pushsafer_vibration_'),   ''],
+                [Blockly.Translate('pushsafer_vibration_1'), '1'],
+                [Blockly.Translate('pushsafer_vibration_2'), '2'],
+                [Blockly.Translate('pushsafer_vibration_3'), '3']
             ]), 'VIBRATION');
         
         this.appendDummyInput('PRIORITY')
-            .appendField(Blockly.Words['pushsafer_priority'][systemLang])
+            .appendField(Blockly.Translate('pushsafer_priority'))
             .appendField(new Blockly.FieldDropdown([
-                [Blockly.Words['pushsafer_priority_'][systemLang],   ''],
-                [Blockly.Words['pushsafer_priority_0'][systemLang], '0'],
-                [Blockly.Words['pushsafer_priority_1'][systemLang], '1'],
-                [Blockly.Words['pushsafer_priority_2'][systemLang], '2'],
-                [Blockly.Words['pushsafer_priority_-1'][systemLang], '-1'],
-                [Blockly.Words['pushsafer_priority_-2'][systemLang], '-2']
+                [Blockly.Translate('pushsafer_priority_'),   ''],
+                [Blockly.Translate('pushsafer_priority_0'), '0'],
+                [Blockly.Translate('pushsafer_priority_1'), '1'],
+                [Blockly.Translate('pushsafer_priority_2'), '2'],
+                [Blockly.Translate('pushsafer_priority_-1'), '-1'],
+                [Blockly.Translate('pushsafer_priority_-2'), '-2']
             ]), 'PRIORITY');
         
         this.appendDummyInput('ANSWER')
-            .appendField(Blockly.Words['pushsafer_answer'][systemLang])
+            .appendField(Blockly.Translate('pushsafer_answer'))
             .appendField(new Blockly.FieldDropdown([
-                [Blockly.Words['pushsafer_answer_'][systemLang],   ''],
-                [Blockly.Words['pushsafer_answer_0'][systemLang], '0'],
-                [Blockly.Words['pushsafer_answer_1'][systemLang], '1']
+                [Blockly.Translate('pushsafer_answer_'),   ''],
+                [Blockly.Translate('pushsafer_answer_0'), '0'],
+                [Blockly.Translate('pushsafer_answer_1'), '1']
             ]), 'ANSWER');
 
         var input = this.appendValueInput('RETRY')
             .setCheck('Number')
-            .appendField(Blockly.Words['pushsafer_retry'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_retry'));
         if (input.connection) input.connection._optional = true;
         
         var input = this.appendValueInput('EXPIRE')
             .setCheck('Number')
-            .appendField(Blockly.Words['pushsafer_expire'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_expire'));
         if (input.connection) input.connection._optional = true;
         
         var input = this.appendValueInput('ICON')
             .setCheck('Number')
-            .appendField(Blockly.Words['pushsafer_icon'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_icon'));
         if (input.connection) input.connection._optional = true;
 
         input = this.appendValueInput('TITLE')
             .setCheck('String')
-            .appendField(Blockly.Words['pushsafer_title'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_title'));
         if (input.connection) input.connection._optional = true;
 
         input = this.appendValueInput('URL')
             .setCheck('String')
-            .appendField(Blockly.Words['pushsafer_url'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_url'));
         if (input.connection) input.connection._optional = true;
 
         input = this.appendValueInput('URL_TITLE')
             .setCheck('String')
-            .appendField(Blockly.Words['pushsafer_url_title'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_url_title'));
         if (input.connection) input.connection._optional = true;
 
         input = this.appendValueInput('DEVICE')
             .setCheck('String')
-            .appendField(Blockly.Words['pushsafer_device'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_device'));
         if (input.connection) input.connection._optional = true;
 
         input = this.appendValueInput('PICTURE')
             .setCheck('String')
-            .appendField(Blockly.Words['pushsafer_filename'][systemLang]);
+            .appendField(Blockly.Translate('pushsafer_filename'));
         if (input.connection) input.connection._optional = true;
 
         this.appendDummyInput('LOG')
-            .appendField(Blockly.Words['pushsafer_log'][systemLang])
+            .appendField(Blockly.Translate('pushsafer_log'))
             .appendField(new Blockly.FieldDropdown([
-                [Blockly.Words['pushsafer_log_none'][systemLang],  ''],
-                [Blockly.Words['pushsafer_log_info'][systemLang],  'log'],
-                [Blockly.Words['pushsafer_log_debug'][systemLang], 'debug'],
-                [Blockly.Words['pushsafer_log_warn'][systemLang],  'warn'],
-                [Blockly.Words['pushsafer_log_error'][systemLang], 'error']
+                [Blockly.Translate('pushsafer_log_none'),  ''],
+                [Blockly.Translate('pushsafer_log_info'),  'log'],
+                [Blockly.Translate('pushsafer_log_debug'), 'debug'],
+                [Blockly.Translate('pushsafer_log_warn'),  'warn'],
+                [Blockly.Translate('pushsafer_log_error'), 'error']
             ]), 'LOG');
 
         this.setInputsInline(false);
@@ -312,8 +323,8 @@ Blockly.Blocks['pushsafer'] = {
         this.setNextStatement(true, null);
 
         this.setColour(Blockly.Sendto.HUE);
-        this.setTooltip(Blockly.Words['pushsafer_tooltip'][systemLang]);
-        this.setHelpUrl(Blockly.Words['pushsafer_help'][systemLang]);
+        this.setTooltip(Blockly.Translate('pushsafer_tooltip'));
+        this.setHelpUrl(Blockly.Translate('pushsafer_help'));
     }
 };
 

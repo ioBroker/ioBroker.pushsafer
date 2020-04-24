@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "pushsafer",
-        "version": "0.1.9",
+        "version": "1.0.0",
         "news": {
+            "1.0.0": {
+                "en": "Added color icon option\nRefactoring",
+                "de": "Farbsymboloption hinzugefügt\nRefactoring",
+                "ru": "Добавлена опция цветного значка\nРефакторинг",
+                "pt": "Adicionada opção de ícone de cor\nReestruturação",
+                "nl": "Kleur icoon optie toegevoegd\nRefactoring",
+                "fr": "Ajout d'une option d'icône de couleur\nRefactoring",
+                "it": "Aggiunta opzione icona colore\nrefactoring",
+                "es": "Opción de icono de color agregado\nRefactorización",
+                "pl": "Dodano opcję ikony koloru\nRefaktoryzacja",
+                "zh-cn": "添加了颜色图标选项\n重构"
+            },
             "0.1.9": {
                 "en": "add new sounds, icons and parameter (priority, retry, expire, answer)",
                 "de": "neue Sounds, Icons und Parameter eingebunden (Priorität, Erneut senden, Verfallen, Antwort)",
@@ -56,6 +68,8 @@
         "subscribe": "messagebox",
         "readme": "https://github.com/ioBroker/ioBroker.pushsafer/blob/master/README.md",
         "enabled": true,
+        "compact": true,
+        "materialize": true,
         "icon": "pushsafer.png",
         "keywords": [
             "notification",
@@ -73,6 +87,8 @@
         "sound": "1",
         "icon": "1",
         "vibration": "",
+        "color": "",
+        "priority": "",
         "url": "",
         "urlTitle": "",
         "time2live": ""

@@ -8,54 +8,26 @@
 <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
 <script type="text/javascript" src="../../js/translate.js"></script>
 <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+<script type="text/javascript" src="words.js"></script>
 
 <script type="text/javascript">
-    systemDictionary = {
-        "Pushsafer adapter settings":      {"de": "Pushsafer-Adapter Einstellungen",  "ru": "Настройки Pushsafer драйвера"},
-        "Pushsafer settings":              {"de": "Pushsafer Einstellungen:",         "ru": "Настройки Pushsafer сервера"},
-        "Device:":                         {"de": "Gerät:",                           "ru": "Устройство:"},
-        "Private Key:":                    {"de": "Privater Schlüssel:",              "ru": "Закрытый ключ:"},
-        "Title:":                          {"de": "Titel:",                           "ru": "Заголовок:"},
-        "Sound:":                          {"de": "Klang:",                           "ru": "Звук:"},
-        "Icon:":                           {"de": "Icon:",                            "ru": "Икона:"},
-        "Icon number 1-98":                {"de": "Icon Nummer 1-98",                 "ru": "Иконка номер 1-98"},
-        "Time to Live:":                   {"de": "Time to Live:",                    "ru": "Time to Live:"},
-        "Integer number 0-43200: Time in minutes, after which message automatically gets purged.": {"de": "Ganzzahl 0-43200: Zeit in Minuten, nach der die Nachricht automatisch gelöscht wird.", "ru": "Целое число 0-43200: Время в течение нескольких минут, после чего сообщение автоматически становится очищенным."},
-        "Vibration:":                      {"de": "Vibration:",                       "ru": "Вибрация:"},
-	"Priority:":                       {"de": "Priorität:",                       "ru": "приоритет:"},
-	"Retry:":                          {"de": "Erneut senden:",                   "ru": "повторно отправить:"},
-	"Integer 60-10800 (60s steps): Time in seconds, after a message should resend.": {"de": "Ganzzahl 60-10800 (60er Schritte): Zeit in Sekunden, nach der die Nachricht erneut versendet werden soll.", "ru": "Целое число 60-10800 (с шагом 60 с): время в секундах после повторной отправки сообщения."},
-	"Expire:":                         {"de": "Verfallen:",           	      "ru": "истекать:"},
-	"Integer 60-10800: Time in seconds, after the retry/resend should stop.": {"de": "Ganzzahl 60-10800: Zeit in Sekunden, nach der das erneute Versenden der Nachrichten gestoppt werden soll.", "ru": "Целое число 60-10800: время в секундах после остановки / повторной отправки должно быть остановлено."},
-	"Answer:":                         {"de": "Antwort:",           	      "ru": "Ответ:"},
-        "Test":                            {"de": "Test",                             "ru": "Тест"},
-        "Notification settings":           {"de": "Mitteilung Einstellungen",         "ru": "Настройки сообщения"},
-        "Device ID or Device Group ID":    {"de": "Geräte ID oder Geräte Gruppen ID", "ru": "ID устройства или ID группы"},
-        "Private or Alias Key from your Pushsafer.com account": {
-            "en": "Privater oder Alias Schlüssel von deinem <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a> Konto",
-            "de": "Privater oder Alias Schlüssel von deinem <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a> Konto",
-            "ru": "Private или Alias key из вашего аккаунта <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a>"
-        }
-    };
-
-    // the function loadSettings has to exist ...
     function load(settings, onChange) {
-        if (settings.token     === undefined) settings.token     = 'xxxxx';
-        if (settings.title     === undefined) settings.title     = 'ioBroker';
-        if (settings.device    === undefined) settings.device    = '22';
-        if (settings.sound     === undefined) settings.sound     = '1';
-        if (settings.icon      === undefined) settings.icon      = '1';
+        if (settings.token === undefined) settings.token = 'xxxxx';
+        if (settings.title === undefined) settings.title = 'ioBroker';
+        if (settings.device === undefined) settings.device = '22';
+        if (settings.sound === undefined) settings.sound = '1';
+        if (settings.icon === undefined) settings.icon = '1';
         if (settings.vibration === undefined) settings.vibration = '';
 
         for (var key in settings) {
             if ($('#' + key + '.value').attr('type') === 'checkbox') {
-                $('#' + key + '.value').prop('checked', settings[key]).change(function() {
+                $('#' + key + '.value').prop('checked', settings[key]).on('change', function () {
                     onChange();
                 });
             } else {
-                $('#' + key + '.value').val(settings[key]).change(function() {
+                $('#' + key + '.value').val(settings[key]).on('change', function () {
                     onChange();
-                }).keyup(function() {
+                }).keyup(function () {
                     $(this).trigger('change');
                 });
             }
@@ -107,10 +79,12 @@
 <!-- you have to put your config page in a div with id adapter-container -->
 <div id="adapter-container">
 
-    <table><tr>
-        <td><img src="pushsafer.png"></td>
-        <td style="padding-top: 20px;padding-left: 10px"><h3 class="translate">Pushsafer adapter settings</h3></td>
-    </tr></table>
+    <table>
+        <tr>
+            <td><img src="pushsafer.png"></td>
+            <td style="padding-top: 20px;padding-left: 10px"><h3 class="translate">Pushsafer adapter settings</h3></td>
+        </tr>
+    </table>
 
     <h4 class="translate">Pushsafer settings</h4>
     <table>
@@ -119,7 +93,9 @@
             <td><input id="token" type="text" size="50" class="value"/></td>
             <td class="translate">Private or Alias Key from your Pushsafer.com account</td>
         </tr>
-        <tr><td colspan="3"><br><h4 class="translate">Notification settings</h4></td></tr>
+        <tr>
+            <td colspan="3"><br><h4 class="translate">Notification settings</h4></td>
+        </tr>
         <tr>
             <td class="translate">Title:</td>
             <td><input id="title" type="text" size="50" class="value"/></td>
@@ -138,8 +114,10 @@
         <tr>
             <td class="translate">Time to Live:</td>
             <td><input id="time2live" type="text" size="50" class="value"/></td>
-            <td class="translate">Integer number 0-43200: Time in minutes, after which message automatically gets purged.</td>
-        </tr>    
+            <td class="translate">Integer number 0-43200: Time in minutes, after which message automatically gets
+                purged.
+            </td>
+        </tr>
         <tr>
             <td class="translate">Vibration:</td>
             <td>
@@ -156,103 +134,105 @@
         <tr>
             <td class="translate">Sound:</td>
             <td><select id="sound" class="value">
-					<option value="">Device Default</option>
-					<option value="0">OFF</option>
-					<option value="1">Ahem (IM)</option>
-					<option value="2">Applause (Mail)</option>
-					<option value="3">Arrow (Reminder)</option>
-					<option value="4">Baby (SMS)</option>
-					<option value="5">Bell (Alarm)</option>
-					<option value="6">Bicycle (Alarm2)</option>
-					<option value="7">Boing (Alarm3)</option>
-					<option value="8">Buzzer (Alarm4)</option>
-					<option value="9">Camera (Alarm5)</option>
-					<option value="10">Car Horn (Alarm6)</option>
-					<option value="11">Cash Register (Alarm7)</option>
-					<option value="12">Chime (Alarm8)</option>
-					<option value="13">Creaky Door (Alarm9)</option>
-					<option value="14">Cuckoo Clock (Alarm10)</option>
-					<option value="15">Disconnect (Call)</option>
-					<option value="16">Dog (Call2)</option>
-					<option value="17">Doorbell (Call3)</option>
-					<option value="18">Fanfare (Call4)</option>
-					<option value="19">Gun Shot (Call5)</option>
-					<option value="20">Honk (Call6)</option>
-					<option value="21">Jaw Harp (Call7)</option>
-					<option value="22">Morse (Call8)</option>
-					<option value="23">Electricity (Call9)</option>
-					<option value="24">Radio Tuner (Call10)</option>
-					<option value="25">Sirens</option>
-					<option value="26">Military Trumpets</option>
-					<option value="27">Ufo</option>
-					<option value="28">Whah Whah Whah</option>
-		    			<option value="29">Man Saying Goodbye</option>
-		    			<option value="30">Man Saying Hello</option>
-		    			<option value="31">Man Saying No</option>
-		    			<option value="32">Man Saying Ok</option>
-		    			<option value="33">Man Saying Ooohhhweee</option>
-		    			<option value="34">Man Saying Warning</option>
-		    			<option value="35">Man Saying Welcome</option>
-		    			<option value="36">Man Saying Yeah</option>
-		    			<option value="37">Man Saying Yes</option>
-		    			<option value="38">Beep short</option>
-		    			<option value="39">Weeeee short</option>
-		    			<option value="40">Cut in and out short</option>
-		    			<option value="41">Finger flicking glas short</option>
-		    			<option value="42">Wa Wa Waaaa short</option>
-		    			<option value="43">Laser short</option>
-		    			<option value="44">Wind Chime short</option>
-		    			<option value="45">Echo short</option>
-		    			<option value="46">Zipper short</option>
-		    			<option value="47">HiHat short</option>
-		    			<option value="48">Beep 2 short</option>
-		    			<option value="49">Beep 3 short</option>
-		    			<option value="50">Beep 4 short</option>
-		    			<option value="51">The Alarm is armed</option>
-		    			<option value="52">The Alarm is disarmed</option>
-		    			<option value="53">The Backup is ready</option>
-		    			<option value="54">The Door is closed</option>
-		    			<option value="55">The Door is opend</option>
-		    			<option value="56">The Window is closed</option>
-		    			<option value="57">The Window is open</option>
-		    			<option value="58">The Light is off</option>
-		    			<option value="59">The Light is on</option>
-		    			<option value="60">The Doorbell rings</option>
+                <option value="">Device Default</option>
+                <option value="0">OFF</option>
+                <option value="1">Ahem (IM)</option>
+                <option value="2">Applause (Mail)</option>
+                <option value="3">Arrow (Reminder)</option>
+                <option value="4">Baby (SMS)</option>
+                <option value="5">Bell (Alarm)</option>
+                <option value="6">Bicycle (Alarm2)</option>
+                <option value="7">Boing (Alarm3)</option>
+                <option value="8">Buzzer (Alarm4)</option>
+                <option value="9">Camera (Alarm5)</option>
+                <option value="10">Car Horn (Alarm6)</option>
+                <option value="11">Cash Register (Alarm7)</option>
+                <option value="12">Chime (Alarm8)</option>
+                <option value="13">Creaky Door (Alarm9)</option>
+                <option value="14">Cuckoo Clock (Alarm10)</option>
+                <option value="15">Disconnect (Call)</option>
+                <option value="16">Dog (Call2)</option>
+                <option value="17">Doorbell (Call3)</option>
+                <option value="18">Fanfare (Call4)</option>
+                <option value="19">Gun Shot (Call5)</option>
+                <option value="20">Honk (Call6)</option>
+                <option value="21">Jaw Harp (Call7)</option>
+                <option value="22">Morse (Call8)</option>
+                <option value="23">Electricity (Call9)</option>
+                <option value="24">Radio Tuner (Call10)</option>
+                <option value="25">Sirens</option>
+                <option value="26">Military Trumpets</option>
+                <option value="27">Ufo</option>
+                <option value="28">Whah Whah Whah</option>
+                <option value="29">Man Saying Goodbye</option>
+                <option value="30">Man Saying Hello</option>
+                <option value="31">Man Saying No</option>
+                <option value="32">Man Saying Ok</option>
+                <option value="33">Man Saying Ooohhhweee</option>
+                <option value="34">Man Saying Warning</option>
+                <option value="35">Man Saying Welcome</option>
+                <option value="36">Man Saying Yeah</option>
+                <option value="37">Man Saying Yes</option>
+                <option value="38">Beep short</option>
+                <option value="39">Weeeee short</option>
+                <option value="40">Cut in and out short</option>
+                <option value="41">Finger flicking glas short</option>
+                <option value="42">Wa Wa Waaaa short</option>
+                <option value="43">Laser short</option>
+                <option value="44">Wind Chime short</option>
+                <option value="45">Echo short</option>
+                <option value="46">Zipper short</option>
+                <option value="47">HiHat short</option>
+                <option value="48">Beep 2 short</option>
+                <option value="49">Beep 3 short</option>
+                <option value="50">Beep 4 short</option>
+                <option value="51">The Alarm is armed</option>
+                <option value="52">The Alarm is disarmed</option>
+                <option value="53">The Backup is ready</option>
+                <option value="54">The Door is closed</option>
+                <option value="55">The Door is opend</option>
+                <option value="56">The Window is closed</option>
+                <option value="57">The Window is open</option>
+                <option value="58">The Light is off</option>
+                <option value="59">The Light is on</option>
+                <option value="60">The Doorbell rings</option>
             </select></td>
             <td></td>
         </tr>
-	<tr>
+        <tr>
             <td class="translate">Priority:</td>
             <td><select id="vibration" class="value">
-                    <option value="2">2</option>
-                    <option value="1">1</option>
-                    <option value="0">0</option>
-		    <option value="-1">-1</option>
-                    <option value="-2">-2</option>
-                </select></td>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="0">0</option>
+                <option value="-1">-1</option>
+                <option value="-2">-2</option>
+            </select></td>
             <td></td>
         </tr>
-	<tr>
+        <tr>
             <td class="translate">Retry:</td>
             <td><input id="retry" type="text" size="50" class="value"/></td>
             <td class="translate">Integer 60-10800 (60s steps): Time in seconds, after a message should resend.</td>
         </tr>
-	<tr>
+        <tr>
             <td class="translate">Expire:</td>
             <td><input id="expire" type="text" size="50" class="value"/></td>
             <td class="translate">Integer 60-10800: Time in seconds, after the retry/resend should stop.</td>
         </tr>
-	<tr>
+        <tr>
             <td class="translate">Answer:</td>
             <td><select id="answer" class="value">
-		    <option value="0">0</option>
-                    <option value="1">1</option>
-                </select></td>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select></td>
             <td></td>
         </tr>
         <tr>
             <td></td>
-            <td><button id="test" class="translate">Test</button></td>
+            <td>
+                <button id="test" class="translate">Test</button>
+            </td>
             <td></td>
         </tr>
     </table>
