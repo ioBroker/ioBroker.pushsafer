@@ -51,7 +51,7 @@ You can use blockly too.
 
 ## Changelog
 
-### __WORK IN PROGRESS__
+### 1.0.3 (2021-01-13)
 * (Apollon77) update dependencies
 
 ### 1.0.2 (2020-04-24)

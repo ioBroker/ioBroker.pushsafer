@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "pushsafer",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "news": {
+            "1.0.3": {
+                "en": "update dependencies",
+                "de": "Abhängigkeiten aktualisieren",
+                "ru": "обновить зависимости",
+                "pt": "atualizar dependências",
+                "nl": "update afhankelijkheden",
+                "fr": "mettre à jour les dépendances",
+                "it": "aggiornare le dipendenze",
+                "es": "actualizar dependencias",
+                "pl": "zależności aktualizacji",
+                "zh-cn": "更新依赖"
+            },
             "1.0.2": {
                 "en": "Added color icon option\nRefactoring",
                 "de": "Farbsymboloption hinzugefügt\nRefactoring",
