@@ -78,7 +78,12 @@
         ],
         "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.pushsafer/master/admin/pushsafer.png",
         "type": "messaging",
-        "blockly": true
+        "blockly": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.5.8"
+            }
+        ]
     },
     "native": {
         "token": "",
