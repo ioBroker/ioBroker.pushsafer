@@ -255,11 +255,12 @@ Blockly.Blocks['pushsafer'] = {
             .appendField(Blockly.Translate('pushsafer_priority'))
             .appendField(new Blockly.FieldDropdown([
                 [Blockly.Translate('pushsafer_priority_'),   ''],
+                [Blockly.Translate('pushsafer_priority_-2'), '-2'],
+                [Blockly.Translate('pushsafer_priority_-1'), '-1'],
                 [Blockly.Translate('pushsafer_priority_0'), '0'],
                 [Blockly.Translate('pushsafer_priority_1'), '1'],
-                [Blockly.Translate('pushsafer_priority_2'), '2'],
-                [Blockly.Translate('pushsafer_priority_-1'), '-1'],
-                [Blockly.Translate('pushsafer_priority_-2'), '-2']
+                [Blockly.Translate('pushsafer_priority_2'), '2']
+
             ]), 'PRIORITY');
         
         this.appendDummyInput('ANSWER')
