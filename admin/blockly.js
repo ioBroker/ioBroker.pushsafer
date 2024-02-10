@@ -39,6 +39,7 @@ Blockly.Words['pushsafer_vibration_1']   = {'en': '1',                          
 Blockly.Words['pushsafer_vibration_2']   = {'en': '2',                           'de': '2',                                  'ru': '2'};
 Blockly.Words['pushsafer_vibration_3']   = {'en': '3',                           'de': '3',                                  'ru': '3'};
 
+Blockly.Words['pushsafer_priority']     = {'en': 'Priority',                     'de': 'Priorität',                          'ru': 'Приоритет'};
 Blockly.Words['pushsafer_priority_']    = {'en': 'default',                      'de': 'normal',                             'ru': 'по умолчанию'};
 Blockly.Words['pushsafer_priority_1']   = {'en': '1',                            'de': '1',                                  'ru': '1'};
 Blockly.Words['pushsafer_priority_2']   = {'en': '2',                            'de': '2',                                  'ru': '2'};
@@ -46,6 +47,7 @@ Blockly.Words['pushsafer_priority_0']   = {'en': '0',                           
 Blockly.Words['pushsafer_priority_-1']  = {'en': '-1',                           'de': '-1',                                 'ru': '-1'};
 Blockly.Words['pushsafer_priority_-2']  = {'en': '-2',                           'de': '-2',                                 'ru': '-2'};
 
+Blockly.Words['pushsafer_answer']       = {'en': 'Answer',                       'de': 'Antwort',                            'ru': 'Ответить'};
 Blockly.Words['pushsafer_answer_']      = {'en': 'default',                      'de': 'normal',                             'ru': 'по умолчанию'};
 Blockly.Words['pushsafer_answer_0']     = {'en': '0',                            'de': '0',                                  'ru': '0'};
 Blockly.Words['pushsafer_answer_1']     = {'en': '1',                            'de': '1',                                  'ru': '1'};
