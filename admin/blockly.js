@@ -354,7 +354,7 @@ Blockly.JavaScript['pushsafer'] = function(block) {
     value = Blockly.JavaScript.valueToCode(block, 'DEVICE', Blockly.JavaScript.ORDER_ATOMIC);
     if (value)     text += '   device: ' + value + ',\n';
     
-    value = Blockly.JavaScript.valueToCode(block, 'PRIORITY', Blockly.JavaScript.ORDER_ATOMIC);
+    value = block.getFieldValue('PRIORITY');
     if (value)     text += '   priority: ' + value + ',\n';
     
     value = Blockly.JavaScript.valueToCode(block, 'RETRY', Blockly.JavaScript.ORDER_ATOMIC);
@@ -363,7 +363,7 @@ Blockly.JavaScript['pushsafer'] = function(block) {
     value = Blockly.JavaScript.valueToCode(block, 'EXPIRE', Blockly.JavaScript.ORDER_ATOMIC);
     if (value)     text += '   expire: ' + value + ',\n';
     
-    value = Blockly.JavaScript.valueToCode(block, 'ANSWER', Blockly.JavaScript.ORDER_ATOMIC);
+    value = block.getFieldValue('ANSWER');
     if (value)     text += '   answer: ' + value + ',\n';
 
     value = Blockly.JavaScript.valueToCode(block, 'PICTURE', Blockly.JavaScript.ORDER_ATOMIC);
