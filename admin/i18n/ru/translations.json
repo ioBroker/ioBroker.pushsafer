@@ -1,0 +1,23 @@
+{
+    "Answer:": "Ответ",
+    "Device ID or Device Group ID": "ID устройства или ID группы",
+    "Device:": "Устройство",
+    "Expire:": "истекать",
+    "Icon number 1-98": "Иконка номер 1-98",
+    "Icon:": "Икона",
+    "Integer 60-10800 (60s steps): Time in seconds, after a message should resend.": "Целое число 60-10800 (с шагом 60 с): время в секундах после повторной отправки сообщения.",
+    "Integer 60-10800: Time in seconds, after the retry/resend should stop.": "Целое число 60-10800: время в секундах после остановки / повторной отправки должно быть остановлено.",
+    "Integer number 0-43200: Time in minutes, after which message automatically gets purged.": "Целое число 0-43200: Время в течение нескольких минут, после чего сообщение автоматически становится очищенным.",
+    "Notification settings": "Настройки сообщения",
+    "Priority:": "приоритет",
+    "Private Key:": "Закрытый ключ",
+    "Private or Alias Key from your Pushsafer.com account": "Private или Alias key из вашего аккаунта <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a>",
+    "Pushsafer adapter settings": "Настройки Pushsafer драйвера",
+    "Pushsafer settings": "Настройки Pushsafer сервера",
+    "Retry:": "повторно отправить",
+    "Sound:": "Звук",
+    "Test": "Тест",
+    "Time to Live:": "Time to Live",
+    "Title:": "Заголовок",
+    "Vibration:": "Вибрация"
+}

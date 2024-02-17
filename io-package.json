@@ -13,7 +13,8 @@
                 "it": "aggiornare le dipendenze",
                 "es": "actualizar dependencias",
                 "pl": "zależności aktualizacji",
-                "zh-cn": "更新依赖"
+                "zh-cn": "更新依赖",
+                "uk": "оновити залежності"
             },
             "1.0.2": {
                 "en": "Added color icon option\nRefactoring",
@@ -25,56 +26,142 @@
                 "it": "Aggiunta opzione icona colore\nrefactoring",
                 "es": "Opción de icono de color agregado\nRefactorización",
                 "pl": "Dodano opcję ikony koloru\nRefaktoryzacja",
-                "zh-cn": "添加了颜色图标选项\n重构"
+                "zh-cn": "添加了颜色图标选项\n重构",
+                "uk": "Додано кольорову піктограму\nРефакторинг"
             },
             "0.1.9": {
                 "en": "add new sounds, icons and parameter (priority, retry, expire, answer)",
                 "de": "neue Sounds, Icons und Parameter eingebunden (Priorität, Erneut senden, Verfallen, Antwort)",
-                "ru": "добавить новые звуки, значки и параметры (приоритет, повтор, истечение, ответ)"
+                "ru": "добавить новые звуки, значки и параметры (приоритет, повтор, истечение, ответ)",
+                "pt": "adicione novos sons, ícones e parâmetros (prioridade, nova tentativa, expiração, resposta)",
+                "nl": "nieuwe geluiden, pictogrammen en parameters toevoegen (prioriteit, opnieuw proberen, verlopen, beantwoorden)",
+                "fr": "ajouter de nouveaux sons, icônes et paramètres (priorité, réessayer, expirer, répondre)",
+                "it": "aggiungi nuovi suoni, icone e parametri (priorità, riprova, scadenza, risposta)",
+                "es": "agregar nuevos sonidos, íconos y parámetros (prioridad, reintento, caducidad, respuesta)",
+                "pl": "dodaj nowe dźwięki, ikony i parametry (priorytet, ponowna próba, wygaśnięcie, odpowiedź)",
+                "uk": "додати нові звуки, іконки та параметри (пріоритет, повторити, закінчити, відповісти)",
+                "zh-cn": "添加新的声音、图标和参数（优先级、重试、过期、应答）"
             },
             "0.1.8": {
                 "en": "use new pushsafer package",
                 "de": "Benutze neues Pushsafer-Paket",
-                "ru": "Использкется новый Pushsafer пакет"
+                "ru": "Использкется новый Pushsafer пакет",
+                "pt": "use o novo pacote pushsafer",
+                "nl": "gebruik het nieuwe pushsafer-pakket",
+                "fr": "utiliser le nouveau package pushsafer",
+                "it": "utilizzare il nuovo pacchetto pushsafer",
+                "es": "utilizar el nuevo paquete pushsafer",
+                "pl": "użyj nowego pakietu pushsafer",
+                "uk": "використовувати новий пакет Pushsafer",
+                "zh-cn": "使用新的 Pushsafer 包"
             },
             "0.1.7": {
                 "en": "implement time2live parameter",
                 "de": "Implementiert time2live Parameter",
-                "ru": "реализовать time2live параметры"
+                "ru": "реализовать time2live параметры",
+                "pt": "implementar parâmetro time2live",
+                "nl": "implementeer de time2live-parameter",
+                "fr": "implémenter le paramètre time2live",
+                "it": "implementare il parametro time2live",
+                "es": "implementar el parámetro time2live",
+                "pl": "zaimplementuj parametr time2live",
+                "uk": "реалізувати параметр time2live",
+                "zh-cn": "实现 time2live 参数"
             },
             "0.1.6": {
                 "en": "implement picture send\nadd blockly",
                 "de": "Implementiert Bild-Senden\nBlockly-Unterstützung",
-                "ru": "Сделана отправка изображений\nПоддержка Blockly"
+                "ru": "Сделана отправка изображений\nПоддержка Blockly",
+                "pt": "implementar envio de imagem\nadicionar em bloco",
+                "nl": "implementeren foto verzenden\nblok toevoegen",
+                "fr": "mettre en œuvre l'envoi d'images\najouter en bloc",
+                "it": "implementare l'invio di immagini\naggiungere a blocchi",
+                "es": "implementar envío de imagen\nagregar en bloque",
+                "pl": "zaimplementuj wysyłanie zdjęć\ndodaj blokowo",
+                "uk": "реалізувати надсилання зображення\nдодати блокно",
+                "zh-cn": "实现图片发送\n块状添加"
             },
             "0.1.3": {
                 "en": "fix config",
                 "de": "Fehler mit der Konfig-Dialog fixed",
-                "ru": "Исправлена ошибка в настройках"
+                "ru": "Исправлена ошибка в настройках",
+                "pt": "corrigir configuração",
+                "nl": "configuratie repareren",
+                "fr": "corriger la configuration",
+                "it": "correggere la configurazione",
+                "es": "arreglar la configuración",
+                "pl": "napraw konfigurację",
+                "uk": "виправити конфіг",
+                "zh-cn": "修复配置"
             },
             "0.1.2": {
                 "en": "fix error with private key",
                 "de": "Fehler mit PrivateKey fixed",
-                "ru": "Исправлена ошибка с private key"
+                "ru": "Исправлена ошибка с private key",
+                "pt": "corrigir erro com chave privada",
+                "nl": "fout oplossen met privésleutel",
+                "fr": "corriger une erreur avec la clé privée",
+                "it": "correggere l'errore con la chiave privata",
+                "es": "corregir error con clave privada",
+                "pl": "napraw błąd z kluczem prywatnym",
+                "uk": "виправити помилку з закритим ключем",
+                "zh-cn": "修复私钥错误"
             },
             "0.1.0": {
                 "en": "inital commit",
                 "de": "Erster Anfang",
-                "ru": "Начало"
+                "ru": "Начало",
+                "pt": "commit inicial",
+                "nl": "initiële commit",
+                "fr": "validation initiale",
+                "it": "impegno iniziale",
+                "es": "compromiso inicial",
+                "pl": "wstępne zatwierdzenie",
+                "uk": "початкова фіксація",
+                "zh-cn": "初始提交"
             }
         },
         "title": "pushsafer Adapter",
-        "desc": "This adapter allows to send pushsafer notifications from ioBroker",
+        "titleLang": {
+            "en": "pushsafer Adapter",
+            "de": "pushsafer-Adapter",
+            "ru": "адаптер pushsafer",
+            "pt": "Adaptador pushsafer",
+            "nl": "pushsafer-adapter",
+            "fr": "Adaptateur pushsafer",
+            "it": "Adattatore pushsafe",
+            "es": "Adaptador pushsafer",
+            "pl": "Adapter pushsafer",
+            "uk": "адаптер pushsafer",
+            "zh-cn": "推安全适配器"
+        },
+        "desc": {
+            "en": "This adapter allows to send pushsafer notifications from ioBroker",
+            "de": "Dieser Adapter ermöglicht das Senden von Push-Safer-Benachrichtigungen von ioBroker",
+            "ru": "Этот адаптер позволяет отправлять pushsafe-уведомления от ioBroker.",
+            "pt": "Este adaptador permite enviar notificações pushsafer do ioBroker",
+            "nl": "Met deze adapter kunt u pushsafer-meldingen verzenden vanuit ioBroker",
+            "fr": "Cet adaptateur permet d'envoyer des notifications pushsafer depuis ioBroker",
+            "it": "Questo adattatore consente di inviare notifiche pushsafe da ioBroker",
+            "es": "Este adaptador permite enviar notificaciones pushsafer desde ioBroker",
+            "pl": "Adapter ten umożliwia wysyłanie powiadomień typu pushsafer z ioBroker",
+            "uk": "Цей адаптер дозволяє надсилати безпечніші сповіщення від ioBroker",
+            "zh-cn": "该适配器允许从 ioBroker 发送 Pushsafer 通知"
+        },
         "authors": [
             "bluefox <dogafox@gmail.com>"
         ],
         "license": "MIT",
+        "licenseInformation": {
+            "type": "free"
+        },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "availableModes": [
             "daemon",
             "subscribe"
         ],
+        "tier": 1,
         "loglevel": "info",
         "messagebox": true,
         "subscribe": "messagebox",
@@ -93,7 +180,7 @@
         "blockly": true,
         "dependencies": [
             {
-                "js-controller": ">=1.5.8"
+                "js-controller": ">=5.0.0"
             }
         ]
     },

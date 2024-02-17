@@ -1,0 +1,23 @@
+{
+    "Answer:": "回答：",
+    "Device ID or Device Group ID": "设备 ID 或设备组 ID",
+    "Device:": "设备：",
+    "Expire:": "到期：",
+    "Icon number 1-98": "图标编号 1-98",
+    "Icon:": "图标：",
+    "Integer 60-10800 (60s steps): Time in seconds, after a message should resend.": "整数 60-10800（60 秒步长）：消息应重新发送后的时间（以秒为单位）。",
+    "Integer 60-10800: Time in seconds, after the retry/resend should stop.": "整数 60-10800：重试/重新发送应停止后的时间（以秒为单位）。",
+    "Integer number 0-43200: Time in minutes, after which message automatically gets purged.": "整数 0-43200：以分钟为单位的时间，在此之后消息将被自动清除。",
+    "Notification settings": "通知设置",
+    "Priority:": "优先事项：",
+    "Private Key:": "私钥：",
+    "Private or Alias Key from your Pushsafer.com account": "您的 <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a> 帐户中的私钥或别名密钥",
+    "Pushsafer adapter settings": "Pushsafer 适配器设置",
+    "Pushsafer settings": "更安全的推送设置",
+    "Retry:": "重试：",
+    "Sound:": "声音：",
+    "Test": "测试",
+    "Time to Live:": "生存时间：",
+    "Title:": "标题：",
+    "Vibration:": "振动："
+}

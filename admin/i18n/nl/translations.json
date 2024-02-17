@@ -1,0 +1,23 @@
+{
+    "Answer:": "Antwoord:",
+    "Device ID or Device Group ID": "Apparaat-ID of apparaatgroep-ID",
+    "Device:": "Apparaat:",
+    "Expire:": "Verlopen:",
+    "Icon number 1-98": "Icoon nummer 1-98",
+    "Icon:": "Icoon:",
+    "Integer 60-10800 (60s steps): Time in seconds, after a message should resend.": "Geheel getal 60-10800 (stappen van 60 seconden): Tijd in seconden waarna een bericht opnieuw moet worden verzonden.",
+    "Integer 60-10800: Time in seconds, after the retry/resend should stop.": "Geheel getal 60-10800: Tijd in seconden, waarna het opnieuw proberen/opnieuw verzenden moet stoppen.",
+    "Integer number 0-43200: Time in minutes, after which message automatically gets purged.": "Geheel getal 0-43200: tijd in minuten, waarna het bericht automatisch wordt verwijderd.",
+    "Notification settings": "Notificatie instellingen",
+    "Priority:": "Prioriteit:",
+    "Private Key:": "Prive sleutel:",
+    "Private or Alias Key from your Pushsafer.com account": "Privé- of aliassleutel van uw <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a>-account",
+    "Pushsafer adapter settings": "Pushsafer-adapterinstellingen",
+    "Pushsafer settings": "Pushsafer-instellingen",
+    "Retry:": "Opnieuw proberen:",
+    "Sound:": "Geluid:",
+    "Test": "Test",
+    "Time to Live:": "Tijd om te leven:",
+    "Title:": "Titel:",
+    "Vibration:": "Trillingen:"
+}

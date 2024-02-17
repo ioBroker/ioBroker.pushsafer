@@ -1,14 +1,8 @@
-gulpfile.js
 .github
 .idea
 tasks
 test
-tmp
-.idea
-.travis.yml
 .git
 node_modules
-.travis.yml
-appveyor.yml
 admin/i18n
 iob_npm.done

@@ -1,0 +1,23 @@
+{
+    "Answer:": "Respuesta:",
+    "Device ID or Device Group ID": "ID de dispositivo o ID de grupo de dispositivos",
+    "Device:": "Dispositivo:",
+    "Expire:": "Expirar:",
+    "Icon number 1-98": "Icono número 1-98",
+    "Icon:": "Icono:",
+    "Integer 60-10800 (60s steps): Time in seconds, after a message should resend.": "Entero 60-10800 (pasos de 60): tiempo en segundos, después de que se debe reenviar un mensaje.",
+    "Integer 60-10800: Time in seconds, after the retry/resend should stop.": "Entero 60-10800: tiempo en segundos, después de que el reintento/reenvío debería detenerse.",
+    "Integer number 0-43200: Time in minutes, after which message automatically gets purged.": "Número entero 0-43200: tiempo en minutos, después del cual el mensaje se elimina automáticamente.",
+    "Notification settings": "Configuración de las notificaciones",
+    "Priority:": "Prioridad:",
+    "Private Key:": "Llave privada:",
+    "Private or Alias Key from your Pushsafer.com account": "Clave privada o alias de su cuenta <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a>",
+    "Pushsafer adapter settings": "Configuración del adaptador Pushsafer",
+    "Pushsafer settings": "Configuraciones más seguras",
+    "Retry:": "Rever:",
+    "Sound:": "Sonido:",
+    "Test": "Prueba",
+    "Time to Live:": "Tiempo para vivir:",
+    "Title:": "Título:",
+    "Vibration:": "Vibración:"
+}

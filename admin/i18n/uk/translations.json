@@ -1,0 +1,23 @@
+{
+    "Answer:": "відповідь:",
+    "Device ID or Device Group ID": "Ідентифікатор пристрою або ідентифікатор групи пристроїв",
+    "Device:": "пристрій:",
+    "Expire:": "закінчується:",
+    "Icon number 1-98": "Значок № 1-98",
+    "Icon:": "Значок:",
+    "Integer 60-10800 (60s steps): Time in seconds, after a message should resend.": "Ціле число 60-10800 (з кроком 60 с): час у секундах після повторного надсилання повідомлення.",
+    "Integer 60-10800: Time in seconds, after the retry/resend should stop.": "Ціле число 60-10800: час у секундах, після повторної спроби/повторного надсилання має припинитися.",
+    "Integer number 0-43200: Time in minutes, after which message automatically gets purged.": "Ціле число 0-43200: час у хвилинах, після якого повідомлення автоматично видаляється.",
+    "Notification settings": "Налаштування сповіщень",
+    "Priority:": "Пріоритет:",
+    "Private Key:": "Приватний ключ:",
+    "Private or Alias Key from your Pushsafer.com account": "Приватний або псевдонімний ключ із вашого облікового запису <a href='https://www.pushsafer.com/' target='_blank'>Pushsafer.com</a>",
+    "Pushsafer adapter settings": "Налаштування адаптера Pushsafer",
+    "Pushsafer settings": "Налаштування Pushsafer",
+    "Retry:": "Повторити:",
+    "Sound:": "звук:",
+    "Test": "Тест",
+    "Time to Live:": "Час жити:",
+    "Title:": "Назва:",
+    "Vibration:": "Вібрація:"
+}
