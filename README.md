@@ -52,7 +52,7 @@ You can use blockly too.
 ## Changelog
 
 ### __WORK IN PROGRESS__
-* IMPORTANT: This adapter now requires Node.js 16.x+
+* IMPORTANT: This adapter now requires Node.js 18.x+
 * (ChrMaass) Fix Blockly priority and answer
 
 ### 1.0.3 (2021-01-13)
