@@ -125,8 +125,8 @@
     "authors": [
       "bluefox <dogafox@gmail.com>"
     ],
-    "license": "MIT",
     "licenseInformation": {
+      "license": "MIT",
       "type": "free"
     },
     "platform": "Javascript/Node.js",
