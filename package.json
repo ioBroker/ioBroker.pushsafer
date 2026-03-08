@@ -41,7 +41,7 @@
     "url": "https://github.com/ioBroker/ioBroker.pushsafer/issues"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "main": "main.js",
   "scripts": {
