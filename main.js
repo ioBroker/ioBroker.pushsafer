@@ -16,7 +16,7 @@
 'use strict';
 const utils       = require('@iobroker/adapter-core'); // Get common adapter utils
 const Pushsafer   = require('pushsafer-notifications');
-const fs          = require('fs');
+const fs          = require('node:fs');
 const adapterName = require('./package.json').name.split('.').pop();
 
 let pushsafer;
