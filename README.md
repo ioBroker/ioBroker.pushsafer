@@ -83,6 +83,8 @@ You can use blockly too.
 ### 0.1.0 (2016-08-28)
 * filter out double messages
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 The MIT License (MIT)
