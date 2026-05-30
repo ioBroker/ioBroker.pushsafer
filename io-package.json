@@ -142,7 +142,6 @@
     "readme": "https://github.com/ioBroker/ioBroker.pushsafer/blob/master/README.md",
     "enabled": true,
     "compact": true,
-    "materialize": true,
     "icon": "pushsafer.png",
     "keywords": [
       "notification",
@@ -156,7 +155,10 @@
       {
         "js-controller": ">=5.0.0"
       }
-    ]
+    ],
+    "adminUI": {
+      "config": "materialize"
+    }
   },
   "native": {
     "token": "",
