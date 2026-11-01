@@ -52,6 +52,7 @@ You can use blockly too.
 ## Changelog
 
 ### **WORK IN PROGRESS**
+- (copilot) Adapter requires node.js >= 22.19.0 now
 - (iobroker-bot) Adapter requires node.js >= 22 now.
 ### 1.1.0 (2024-04-21)
 * IMPORTANT: This adapter now requires Node.js 18.x+
